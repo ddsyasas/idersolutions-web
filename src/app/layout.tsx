@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: 'Ider Solutions provides professional web development, digital solutions, and innovative technology services. We specialize in creating modern, responsive websites and applications that drive business growth.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Ider Solutions - Professional Web Development & Digital Solutions',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ider Solutions - Professional Web Development & Digital Solutions',
     description: 'Ider Solutions provides professional web development, digital solutions, and innovative technology services.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
     creator: '@idersolutions',
     site: '@idersolutions',
   },
@@ -107,7 +107,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Ider Solutions",
               "url": "https://idersolutions.com",
-              "logo": "https://idersolutions.com/logo.png",
+              "logo": "https://idersolutions.com/logo.svg",
               "description": "Professional web development and digital solutions company",
               "address": {
                 "@type": "PostalAddress",

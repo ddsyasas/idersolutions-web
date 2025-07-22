@@ -44,7 +44,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "@type": "Organization",
           name: data.name || "Ider Solutions",
           url: data.url || "https://idersolutions.com",
-          logo: data.logo || "https://idersolutions.com/logo.png",
+          logo: data.logo || "https://idersolutions.com/logo.svg",
           description: data.description || "Professional web development and digital solutions company",
           address: {
             "@type": "PostalAddress",
@@ -92,7 +92,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             name: "Ider Solutions",
             logo: {
               "@type": "ImageObject",
-              url: "https://idersolutions.com/logo.png"
+              url: "https://idersolutions.com/logo.svg"
             }
           },
           datePublished: data.datePublished,

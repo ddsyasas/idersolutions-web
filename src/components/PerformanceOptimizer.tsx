@@ -73,8 +73,8 @@ export function DefaultPerformanceOptimizer() {
   return (
     <PerformanceOptimizer
       preloadImages={[
-        '/og-image.jpg',
-        '/logo.png'
+        '/og-image.svg',
+        '/logo.svg'
       ]}
       prefetchUrls={[
         'https://idersolutions.com/#about',
