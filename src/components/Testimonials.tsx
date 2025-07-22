@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const Testimonials = () => {
@@ -43,11 +43,11 @@ const Testimonials = () => {
     },
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [testimonials.length]);
 
   const prevTestimonial = () => {
     setCurrentIndex((prevIndex) => 
@@ -59,7 +59,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextTestimonial]);
 
   return (
     <section className="py-20 relative">
@@ -70,7 +70,7 @@ const Testimonials = () => {
             Client Testimonials
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it - hear from our satisfied clients
+            Don&apos;t just take our word for it - hear from our satisfied clients
           </p>
         </div>
 
@@ -78,8 +78,8 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto relative">
           <div className="bg-gray-800/50 rounded-3xl p-8 md:p-12 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-4 left-4 text-6xl text-ider-yellow/20 font-serif">"</div>
-            <div className="absolute bottom-4 right-4 text-6xl text-ider-yellow/20 font-serif rotate-180">"</div>
+            <div className="absolute top-4 left-4 text-6xl text-ider-yellow/20 font-serif">&quot;</div>
+            <div className="absolute bottom-4 right-4 text-6xl text-ider-yellow/20 font-serif rotate-180">&quot;</div>
 
             {/* Testimonial Content */}
             <div className="relative z-10 text-center">
@@ -97,6 +97,7 @@ const Testimonials = () => {
 
               {/* Author Info */}
               <div className="flex items-center justify-center space-x-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={testimonials[currentIndex].avatar}
                   alt={testimonials[currentIndex].name}

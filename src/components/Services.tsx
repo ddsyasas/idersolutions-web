@@ -140,7 +140,7 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <p className="text-white/80 mb-6">
-            Need a custom solution? We'd love to discuss your project.
+            Need a custom solution? We&apos;d love to discuss your project.
           </p>
           <a
             href="#contact"

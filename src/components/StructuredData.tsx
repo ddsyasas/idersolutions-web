@@ -2,7 +2,32 @@
 
 interface StructuredDataProps {
   type: 'organization' | 'website' | 'article' | 'service' | 'localBusiness';
-  data: any;
+  data: {
+    name?: string;
+    url?: string;
+    logo?: string;
+    description?: string;
+    addressCountry?: string;
+    email?: string;
+    socialLinks?: string[];
+    headline?: string;
+    image?: string;
+    author?: string;
+    datePublished?: string;
+    dateModified?: string;
+    areaServed?: string;
+    serviceType?: string;
+    telephone?: string;
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    geo?: {
+      latitude: number;
+      longitude: number;
+    };
+    openingHours?: string;
+  };
 }
 
 export default function StructuredData({ type, data }: StructuredDataProps) {

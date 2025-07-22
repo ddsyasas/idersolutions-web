@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Globe, Code } from 'lucide-react';
+import { ArrowRight, Globe } from 'lucide-react';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
@@ -82,7 +82,7 @@ const Portfolio = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-            Discover how we've helped clients transform their ideas into successful digital products
+            Discover how we&apos;ve helped clients transform their ideas into successful digital products
           </p>
         </div>
 
@@ -112,11 +112,12 @@ const Portfolio = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden h-48">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ider-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 

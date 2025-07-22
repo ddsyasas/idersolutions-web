@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -28,7 +29,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-ider-primary">1. Introduction</h2>
               <p className="mb-4">
-                Ider Solutions ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://idersolutions.com/ or use our services.
+                Ider Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://idersolutions.com/ or use our services.
               </p>
               <p>
                 By using our website and services, you consent to the data practices described in this policy.
@@ -128,7 +129,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 text-ider-primary">9. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-ider-primary">9. Children&apos;s Privacy</h2>
               <p className="mb-4">
                 Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.
               </p>
@@ -137,7 +138,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-ider-primary">10. Changes to This Privacy Policy</h2>
               <p className="mb-4">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
               </p>
             </section>
 
@@ -155,12 +156,12 @@ export default function PrivacyPolicy() {
           </div>
 
           <div className="text-center mt-12">
-            <a 
+            <Link 
               href="/"
               className="inline-block bg-ider-primary hover:bg-ider-primary/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
             >
               Return to Homepage
-            </a>
+            </Link>
           </div>
         </div>
       </div>

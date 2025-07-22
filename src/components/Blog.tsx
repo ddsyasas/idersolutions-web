@@ -60,11 +60,12 @@ const Blog = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Blog Post Image */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden h-48">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ider-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 

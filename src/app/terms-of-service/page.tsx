@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -131,7 +132,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-ider-primary">12. Changes to Terms</h2>
               <p className="mb-4">
-                We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new Terms of Service on this page and updating the "Last updated" date.
+                We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new Terms of Service on this page and updating the &quot;Last updated&quot; date.
               </p>
             </section>
 
@@ -149,12 +150,12 @@ export default function TermsOfService() {
           </div>
 
           <div className="text-center mt-12">
-            <a 
+            <Link 
               href="/"
               className="inline-block bg-ider-primary hover:bg-ider-primary/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
             >
               Return to Homepage
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Zap, Users, Globe, Code } from 'lucide-react';
 
 const WhyChooseUs = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [, setCurrentIndex] = useState(0);
 
   const reasons = [
     {
@@ -35,23 +35,23 @@ const WhyChooseUs = () => {
     },
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === reasons.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [reasons.length]);
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? reasons.length - 1 : prevIndex - 1
-    );
-  };
+  // const prevTestimonial = () => {
+  //   setCurrentIndex((prevIndex) => 
+  //     prevIndex === 0 ? reasons.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   // Auto-play functionality
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextTestimonial]);
 
   return (
     <section className="py-20 relative">
@@ -124,7 +124,7 @@ const WhyChooseUs = () => {
               href="#contact"
               className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
             >
-              <span>Let's Build Together</span>
+              <span>Let&apos;s Build Together</span>
               <span>🚀</span>
             </a>
           </div>

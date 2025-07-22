@@ -43,7 +43,7 @@ const About = () => {
               About IDER Solutions
             </h2>
             <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-              We're your trusted partner in transforming ideas into powerful digital solutions. 
+              We&apos;re your trusted partner in transforming ideas into powerful digital solutions. 
               From concept to launch, we guide you through every step of your digital journey.
             </p>
           </div>
