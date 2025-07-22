@@ -130,7 +130,7 @@ const Blog = () => {
         {/* View More CTA */}
         <div className="text-center mt-16">
           <a
-            href="#contact"
+            href="/blog"
             className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
           >
             <span>📚 View All Articles</span>

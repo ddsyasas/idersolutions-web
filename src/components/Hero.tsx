@@ -225,7 +225,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
-            We help you design, build, and scale digital solutions that drive results.
+            We help you design, build, and scale your business or idea in digital space that drive results you want.
           </p>
 
           {/* CTA Buttons */}
@@ -234,7 +234,7 @@ const Hero = () => {
               href="#contact"
               className="group bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 flex items-center space-x-2 yellow-glow"
             >
-              <span>🚀 Start Your Project</span>
+              <span>🚀 Start Your Growth</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
@@ -242,7 +242,7 @@ const Hero = () => {
               className="group bg-gray-800/50 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-700/50 transition-all duration-300 flex items-center space-x-2"
             >
               <Globe className="w-5 h-5" />
-              <span>Explore Our Work</span>
+              <span>Explore Our Capabilities</span>
             </a>
           </div>
 
