@@ -7,21 +7,27 @@ import { DefaultGoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ider Solutions - Professional Web Development & Digital Solutions",
-    template: "%s | Ider Solutions"
+    default: "IDER Solutions | Digital Solutions that Scale & Lead",
+    template: "%s | IDER Solutions"
   },
-  description: "Ider Solutions provides professional web development, digital solutions, and innovative technology services. We specialize in creating modern, responsive websites and applications that drive business growth.",
+  description: "IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.",
   keywords: [
-    "web development",
     "digital solutions",
-    "website design",
-    "software development",
-    "mobile apps",
-    "e-commerce",
-    "digital marketing",
-    "technology consulting",
-    "responsive design",
-    "SEO optimization"
+    "scalable web platforms",
+    "custom web architecture",
+    "intelligent SEO",
+    "AI-powered SEO",
+    "digital growth strategy",
+    "performance marketing",
+    "growth-driven design",
+    "future-ready websites",
+    "innovation consulting",
+    "digital leadership",
+    "custom development",
+    "scalable platforms",
+    "future-ready web solutions",
+    "strategic web design",
+    "business transformation"
   ],
   authors: [{ name: "Ider Solutions Team" }],
   creator: "Ider Solutions",
@@ -39,22 +45,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://idersolutions.com',
-    siteName: 'Ider Solutions',
-    title: 'Ider Solutions - Professional Web Development & Digital Solutions',
-    description: 'Ider Solutions provides professional web development, digital solutions, and innovative technology services. We specialize in creating modern, responsive websites and applications that drive business growth.',
+    siteName: 'IDER Solutions',
+    title: 'IDER Solutions | Digital Solutions that Scale & Lead',
+    description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Ider Solutions - Professional Web Development & Digital Solutions',
+        alt: 'IDER Solutions | Digital Solutions that Scale & Lead',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ider Solutions - Professional Web Development & Digital Solutions',
-    description: 'Ider Solutions provides professional web development, digital solutions, and innovative technology services.',
+    title: 'IDER Solutions | Digital Solutions that Scale & Lead',
+    description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
     images: ['/og-image.svg'],
     creator: '@idersolutions',
     site: '@idersolutions',
@@ -108,7 +114,7 @@ export default function RootLayout({
               "name": "Ider Solutions",
               "url": "https://idersolutions.com",
               "logo": "https://idersolutions.com/logo.svg",
-              "description": "Professional web development and digital solutions company",
+              "description": "IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "US"
