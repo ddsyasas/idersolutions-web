@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://idersolutions.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'IDER Solutions | Digital Solutions that Scale & Lead',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IDER Solutions | Digital Solutions that Scale & Lead',
     description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
-    images: ['/og-image.jpg'],
+    images: ['https://idersolutions.com/og-image.jpg'],
     creator: '@idersolutions',
     site: '@idersolutions',
   },
