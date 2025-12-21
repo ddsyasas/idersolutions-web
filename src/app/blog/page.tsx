@@ -8,7 +8,7 @@ const BlogPage = () => {
   return (
     <>
       <Navbar scrollY={0} />
-      <main className="pt-24 bg-ider-dark min-h-screen">
+      <main className="pt-24 bg-white min-h-screen">
         <Blog />
       </main>
       <Footer />

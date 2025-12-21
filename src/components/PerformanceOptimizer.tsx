@@ -77,9 +77,11 @@ export function DefaultPerformanceOptimizer() {
         '/logo.svg'
       ]}
       prefetchUrls={[
-        'https://idersolutions.com/#about',
-        'https://idersolutions.com/#services',
-        'https://idersolutions.com/#contact'
+        'https://idersolutions.com/about',
+        'https://idersolutions.com/services',
+        'https://idersolutions.com/portfolio',
+        'https://idersolutions.com/contact',
+        'https://idersolutions.com/blog'
       ]}
       preconnectDomains={[
         'https://fonts.googleapis.com',

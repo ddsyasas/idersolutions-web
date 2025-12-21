@@ -55,15 +55,15 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
           {/* Logo */}
           <button
             onClick={() => router.push('/')}
-            className="flex items-center space-x-2 bg-transparent border-none outline-none cursor-pointer"
+            className="flex items-center space-x-2 bg-transparent border-none outline-none cursor-pointer text-left"
             style={{ background: 'none', border: 'none', padding: 0 }}
           >
-            <div className="w-10 h-10 bg-ider-yellow rounded-lg flex items-center justify-center font-bold text-white text-xl">
+            <div className="w-10 h-10 bg-ider-yellow rounded-lg flex items-center justify-center font-bold text-white text-xl flex-shrink-0">
               I
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">IDER SOLUTIONS</h1>
-              <p className="text-xs text-gray-600 animate-fade-in animation-delay-500">
+            <div className="text-left">
+              <h1 className="text-xl font-bold text-gray-900 text-left">IDER SOLUTIONS</h1>
+              <p className="text-xs text-gray-600 animate-fade-in animation-delay-500 text-left">
                 We turn ideas into digital reality
               </p>
             </div>

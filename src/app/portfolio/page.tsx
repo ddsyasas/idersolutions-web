@@ -62,12 +62,12 @@ export default function PortfolioPage() {
       <Navbar scrollY={0} />
       <main className="pt-24 bg-white min-h-screen">
         <div className="container mx-auto px-6 py-8">
-          {/* Breadcrumbs */}
-          <nav className="mb-8 text-sm text-gray-600">
+          {/* Breadcrumbs - Hidden visually but available for SEO/screen readers */}
+          <nav className="sr-only" aria-label="Breadcrumb">
             <ol className="flex space-x-2">
-              <li><a href="/" className="hover:text-ider-yellow transition-colors">Home</a></li>
-              <li className="text-gray-400">/</li>
-              <li className="text-gray-900 font-medium">Portfolio</li>
+              <li><a href="/">Home</a></li>
+              <li>/</li>
+              <li>Portfolio</li>
             </ol>
           </nav>
           
