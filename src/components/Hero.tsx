@@ -234,7 +234,7 @@ const Hero = () => {
               href="#contact"
               className="group bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 flex items-center space-x-2 yellow-glow"
             >
-              <span>🚀 Start Your Growth</span>
+              <span>FREE CONSULTATION</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a

@@ -146,6 +146,12 @@ export default function RootLayout({
           }}
         />
         <DefaultGoogleAnalytics />
+        <Script
+          src="https://web3forms.com/client/script.js"
+          strategy="lazyOnload"
+          async
+          defer
+        />
         <TooltipProvider>
           {children}
           <Toaster />

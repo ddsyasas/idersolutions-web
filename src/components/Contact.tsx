@@ -10,6 +10,8 @@ const Contact = () => {
     projectType: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState('');
 
   const projectTypes = [
     'Web Development',
@@ -19,7 +21,7 @@ const Contact = () => {
     'Custom Solution',
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Basic validation
@@ -31,21 +33,63 @@ const Contact = () => {
       return;
     }
 
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
+    // hCaptcha validation
+    const hCaptchaResponse = e.currentTarget.querySelector<HTMLTextAreaElement>('textarea[name="h-captcha-response"]');
+    if (!hCaptchaResponse || !hCaptchaResponse.value) {
+      toast({
+        title: "Please complete the captcha",
+        description: "Please verify that you're not a robot.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    setIsSubmitting(true);
+    setSubmitResult('');
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      projectType: '',
-      message: '',
-    });
+    try {
+      const formDataToSend = new FormData(e.currentTarget);
+      formDataToSend.append("access_key", "7699df5a-5b6f-4cb6-b248-fe5440a6926d");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitResult('success');
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          projectType: '',
+          message: '',
+        });
+      } else {
+        setSubmitResult('error');
+        toast({
+          title: "Error sending message",
+          description: data.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      setSubmitResult('error');
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -200,16 +244,35 @@ const Contact = () => {
                 />
               </div>
 
+              {/* hCaptcha */}
+              <div className="h-captcha" data-captcha="true"></div>
+
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-ider-yellow text-white py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all duration-300 group yellow-glow"
+                disabled={isSubmitting}
+                className="w-full bg-ider-yellow text-white py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all duration-300 group yellow-glow disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="flex items-center justify-center space-x-2">
-                  <span>Send Message</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">🚀</span>
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                  {!isSubmitting && (
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">🚀</span>
+                  )}
                 </span>
               </button>
+
+              {/* Result Message */}
+              {submitResult && (
+                <div className={`mt-4 p-4 rounded-lg text-center font-semibold ${
+                  submitResult === 'success' 
+                    ? 'bg-green-100 text-green-800' 
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {submitResult === 'success' 
+                    ? '✓ Message sent successfully!' 
+                    : '✗ Failed to send message. Please try again.'}
+                </div>
+              )}
             </form>
           </div>
         </div>
