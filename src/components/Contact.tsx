@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Mail, Globe, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';

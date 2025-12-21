@@ -14,27 +14,31 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
   const router = useRouter();
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home', useHash: true },
+    { href: '/about', label: 'About', useHash: false },
+    { href: '/services', label: 'Services', useHash: false },
+    { href: '/portfolio', label: 'Portfolio', useHash: false },
+    { href: '/blog', label: 'Blog', useHash: false },
+    { href: '#faq', label: 'FAQ', useHash: true },
+    { href: '/contact', label: 'Contact', useHash: false },
   ];
 
   // Helper to handle navigation
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, useHash: boolean) => {
     setIsMenuOpen(false);
-    if (pathname === '/') {
-      // On home, just scroll
+    
+    if (useHash && pathname === '/') {
+      // On home, use hash for smooth scrolling
       const el = document.querySelector(href);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
-    } else {
+    } else if (useHash && pathname !== '/') {
       // On other pages, go to home with hash
       router.push('/' + href);
+    } else {
+      // Use full URL navigation
+      router.push(href);
     }
   };
 
@@ -49,7 +53,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <button
+            onClick={() => router.push('/')}
+            className="flex items-center space-x-2 bg-transparent border-none outline-none cursor-pointer"
+            style={{ background: 'none', border: 'none', padding: 0 }}
+          >
             <div className="w-10 h-10 bg-ider-yellow rounded-lg flex items-center justify-center font-bold text-white text-xl">
               I
             </div>
@@ -59,23 +67,27 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
                 We turn ideas into digital reality
               </p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-gray-900 hover:text-ider-yellow transition-colors duration-300 relative group bg-transparent border-none outline-none cursor-pointer"
-                style={{ background: 'none', border: 'none', padding: 0 }}
+                onClick={() => handleNavClick(item.href, item.useHash)}
+                className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 relative group ${
+                  pathname === item.href ? 'text-ider-yellow' : ''
+                }`}
+                style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ider-yellow transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-ider-yellow transition-all duration-300 group-hover:w-full ${
+                  pathname === item.href ? 'w-full' : 'w-0'
+                }`}></span>
               </button>
             ))}
             <button
-              onClick={() => handleNavClick('#contact')}
+              onClick={() => handleNavClick('/contact', false)}
               className="bg-ider-yellow text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300 yellow-glow"
             >
               Get Started
@@ -98,15 +110,17 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  className="text-gray-900 hover:text-ider-yellow transition-colors duration-300 py-2 bg-transparent border-none outline-none cursor-pointer"
-                  style={{ background: 'none', border: 'none', padding: 0 }}
+                  onClick={() => handleNavClick(item.href, item.useHash)}
+                  className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 py-2 ${
+                    pathname === item.href ? 'text-ider-yellow font-semibold' : ''
+                  }`}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}
                 >
                   {item.label}
                 </button>
               ))}
               <button
-                onClick={() => handleNavClick('#contact')}
+                onClick={() => handleNavClick('/contact', false)}
                 className="bg-ider-yellow text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-block text-center"
               >
                 Get Started
