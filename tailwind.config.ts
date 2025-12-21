@@ -66,7 +66,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				ider: {
-					yellow: '#FFD700',
+					yellow: '#1A53A2',
 					dark: '#111111',
 					darker: '#0A0A0A',
 					grey: '#CCCCCC',
@@ -100,7 +100,7 @@ export default {
 				},
 				'blink': {
 					'0%, 50%': { borderColor: 'transparent' },
-					'51%, 100%': { borderColor: '#FFD700' }
+					'51%, 100%': { borderColor: '#1A53A2' }
 				},
 				'fade-in-up': {
 					from: {
@@ -127,8 +127,8 @@ export default {
 					}
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)' },
-					'50%': { boxShadow: '0 0 30px rgba(255, 215, 0, 0.8)' }
+					'0%, 100%': { boxShadow: '0 0 20px rgba(26, 83, 162, 0.5)' },
+					'50%': { boxShadow: '0 0 30px rgba(26, 83, 162, 0.8)' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
@@ -136,11 +136,11 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 5px rgba(255, 215, 0, 0.5)',
+						boxShadow: '0 0 5px rgba(26, 83, 162, 0.5)',
 						transform: 'scale(1)'
 					},
 					'50%': { 
-						boxShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
+						boxShadow: '0 0 20px rgba(26, 83, 162, 0.8)',
 						transform: 'scale(1.05)'
 					}
 				}

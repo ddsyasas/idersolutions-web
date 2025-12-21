@@ -224,7 +224,7 @@ const Hero = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
             We help you design, build, and scale your business or idea in digital space that drive results you want.
           </p>
 
@@ -232,14 +232,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a
               href="#contact"
-              className="group bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 flex items-center space-x-2 yellow-glow"
+              className="group bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 flex items-center space-x-2 yellow-glow"
             >
               <span>🚀 Start Your Growth</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
               href="#portfolio"
-              className="group bg-gray-800/50 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-700/50 transition-all duration-300 flex items-center space-x-2"
+              className="group bg-gray-100 text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 flex items-center space-x-2"
             >
               <Globe className="w-5 h-5" />
               <span>Explore Our Capabilities</span>
@@ -258,7 +258,7 @@ const Hero = () => {
                 <div className="text-3xl md:text-4xl font-bold text-ider-yellow mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
-                <div className="text-white/80">{stat.label}</div>
+                <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>

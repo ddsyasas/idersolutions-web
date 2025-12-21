@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Why Choose IDER?
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             We combine speed, creativity, and technical excellence to deliver exceptional digital solutions
           </p>
         </div>
@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-gray-800/50 rounded-3xl p-8 text-center group hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+              className="bg-gray-50 rounded-3xl p-8 text-center group hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200"
               onMouseEnter={(e) => {
                 const iconElement = e.currentTarget.querySelector('.icon-container') as HTMLElement;
                 if (iconElement) {
@@ -99,12 +99,12 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold mb-4 text-white">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
                 {reason.title}
               </h3>
 
               {/* Description */}
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {reason.description}
               </p>
             </div>
@@ -113,16 +113,16 @@ const WhyChooseUs = () => {
 
         {/* Bottom CTA - Box-style */}
         <div className="text-center mt-16">
-          <div className="bg-gray-800/50 rounded-3xl p-12 max-w-4xl mx-auto">
+          <div className="bg-gray-50 rounded-3xl p-12 max-w-4xl mx-auto border border-gray-200">
             <h3 className="text-3xl font-bold mb-6 text-ider-yellow">
               Ready to Transform Your Ideas?
             </h3>
-            <p className="text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Join 50+ satisfied clients who have successfully launched their digital products with IDER Solutions.
             </p>
             <a
               href="#contact"
-              className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
+              className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
             >
               <span>Let&apos;s Build Together</span>
               <span>🚀</span>

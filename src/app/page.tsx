@@ -76,7 +76,7 @@ const Home = () => {
       
       <DefaultPerformanceOptimizer />
       
-      <div className="min-h-screen bg-gradient-to-b from-ider-dark to-ider-darker text-white overflow-x-hidden">
+      <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
         <AnimatedBackground />
         <Navbar scrollY={scrollY} />
         <main>

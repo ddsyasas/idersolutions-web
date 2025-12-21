@@ -41,20 +41,20 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrollY > 50 || isMenuOpen 
-          ? 'bg-ider-dark/95 backdrop-blur-lg shadow-lg' 
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-ider-yellow to-yellow-400 rounded-lg flex items-center justify-center font-bold text-ider-dark text-xl">
+            <div className="w-10 h-10 bg-ider-yellow rounded-lg flex items-center justify-center font-bold text-white text-xl">
               I
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">IDER SOLUTIONS</h1>
-              <p className="text-xs text-ider-grey animate-fade-in animation-delay-500">
+              <h1 className="text-xl font-bold text-gray-900">IDER SOLUTIONS</h1>
+              <p className="text-xs text-gray-600 animate-fade-in animation-delay-500">
                 We turn ideas into digital reality
               </p>
             </div>
@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="text-white hover:text-ider-yellow transition-colors duration-300 relative group bg-transparent border-none outline-none cursor-pointer"
+                className="text-gray-900 hover:text-ider-yellow transition-colors duration-300 relative group bg-transparent border-none outline-none cursor-pointer"
                 style={{ background: 'none', border: 'none', padding: 0 }}
               >
                 {item.label}
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
             ))}
             <button
               onClick={() => handleNavClick('#contact')}
-              className="bg-ider-yellow text-ider-dark px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300 yellow-glow"
+              className="bg-ider-yellow text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300 yellow-glow"
             >
               Get Started
             </button>
@@ -83,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:text-ider-yellow transition-colors duration-300"
+            className="md:hidden text-gray-900 hover:text-ider-yellow transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-white hover:text-ider-yellow transition-colors duration-300 py-2 bg-transparent border-none outline-none cursor-pointer"
+                  className="text-gray-900 hover:text-ider-yellow transition-colors duration-300 py-2 bg-transparent border-none outline-none cursor-pointer"
                   style={{ background: 'none', border: 'none', padding: 0 }}
                 >
                   {item.label}
@@ -106,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
               ))}
               <button
                 onClick={() => handleNavClick('#contact')}
-                className="bg-ider-yellow text-ider-dark px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300 inline-block text-center"
+                className="bg-ider-yellow text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-block text-center"
               >
                 Get Started
               </button>

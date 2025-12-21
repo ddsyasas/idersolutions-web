@@ -81,7 +81,7 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Featured Projects
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Discover how we&apos;ve helped clients transform their ideas into successful digital products
           </p>
         </div>
@@ -94,8 +94,8 @@ const Portfolio = () => {
               onClick={() => setFilter(category.key)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 filter === category.key
-                  ? 'bg-ider-yellow text-ider-dark'
-                  : 'bg-gray-800/50 text-white hover:bg-gray-700/50'
+                  ? 'bg-ider-yellow text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
               }`}
             >
               {category.label}
@@ -108,7 +108,7 @@ const Portfolio = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group relative bg-gray-800/50 rounded-3xl overflow-hidden hover:bg-gray-700/50 transition-all duration-300"
+              className="group relative bg-gray-50 rounded-3xl overflow-hidden hover:bg-gray-100 transition-all duration-300 border border-gray-200"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
@@ -125,7 +125,7 @@ const Portfolio = () => {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
-                    className="bg-ider-yellow text-ider-dark p-3 rounded-full hover:bg-yellow-400 transition-colors duration-300"
+                    className="bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-colors duration-300"
                   >
                     <Globe className="w-6 h-6" />
                   </a>
@@ -134,10 +134,10 @@ const Portfolio = () => {
 
               {/* Project Info */}
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-4 text-white">
+                <h3 className="text-xl font-bold mb-4 text-gray-900">
                   {project.title}
                 </h3>
-                <p className="text-white/80 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -156,7 +156,7 @@ const Portfolio = () => {
                 {/* View Project Link */}
                 <a
                   href={project.link}
-                  className="inline-flex items-center space-x-2 text-ider-yellow hover:text-yellow-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
+                  className="inline-flex items-center space-x-2 text-ider-yellow hover:opacity-80 font-semibold group-hover:translate-x-2 transition-transform duration-300"
                 >
                   <span>View Project</span>
                   <ArrowRight className="w-4 h-4" />
@@ -170,7 +170,7 @@ const Portfolio = () => {
         <div className="text-center mt-16">
           <a
             href="#contact"
-            className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
+            className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
           >
             <span>🔎 View More Projects</span>
           </a>

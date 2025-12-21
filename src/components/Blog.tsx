@@ -46,7 +46,7 @@ const Blog = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Latest Insights
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Stay updated with the latest trends, tips, and insights from our team of digital experts
           </p>
         </div>
@@ -56,7 +56,7 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <div
               key={post.id}
-              className="group relative bg-gray-800/50 rounded-3xl overflow-hidden hover:bg-gray-700/50 transition-all duration-300"
+              className="group relative bg-gray-50 rounded-3xl overflow-hidden hover:bg-gray-100 transition-all duration-300 border border-gray-200"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Blog Post Image */}
@@ -67,11 +67,11 @@ const Blog = () => {
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ider-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-ider-yellow text-ider-dark text-sm rounded-full font-semibold">
+                  <span className="px-3 py-1 bg-ider-yellow text-white text-sm rounded-full font-semibold">
                     {post.category}
                   </span>
                 </div>
@@ -80,7 +80,7 @@ const Blog = () => {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={post.link}
-                    className="bg-ider-yellow text-ider-dark p-3 rounded-full hover:bg-yellow-400 transition-colors duration-300"
+                    className="bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-colors duration-300"
                   >
                     <ArrowRight className="w-6 h-6" />
                   </a>
@@ -89,15 +89,15 @@ const Blog = () => {
 
               {/* Blog Post Info */}
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-ider-yellow transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-ider-yellow transition-colors duration-300">
                   {post.title}
                 </h3>
-                <p className="text-white/80 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {post.excerpt}
                 </p>
 
                 {/* Meta Information */}
-                <div className="flex items-center justify-between text-sm text-white/60 mb-6">
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
                   <div className="flex items-center space-x-2">
                     <User className="w-4 h-4" />
                     <span>{post.author}</span>
@@ -109,7 +109,7 @@ const Blog = () => {
                 </div>
 
                 {/* Date */}
-                <div className="flex items-center space-x-2 text-sm text-white/60 mb-6">
+                <div className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
                   <Calendar className="w-4 h-4" />
                   <span>{post.date}</span>
                 </div>
@@ -117,7 +117,7 @@ const Blog = () => {
                 {/* Read More Link */}
                 <a
                   href={post.link}
-                  className="inline-flex items-center space-x-2 text-ider-yellow hover:text-yellow-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
+                  className="inline-flex items-center space-x-2 text-ider-yellow hover:opacity-80 font-semibold group-hover:translate-x-2 transition-transform duration-300"
                 >
                   <span>Read More</span>
                   <ArrowRight className="w-4 h-4" />
@@ -131,7 +131,7 @@ const Blog = () => {
         <div className="text-center mt-16">
           <a
             href="/blog"
-            className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
+            className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
           >
             <span>📚 View All Articles</span>
           </a>

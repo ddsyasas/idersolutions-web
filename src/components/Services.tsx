@@ -65,7 +65,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Our Services
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             End-to-end digital solutions to transform your business and accelerate growth
           </p>
         </div>
@@ -75,7 +75,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-800/50 rounded-3xl p-8 group hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+              className="bg-gray-50 rounded-3xl p-8 group hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200"
               onMouseEnter={(e) => {
                 const iconElement = e.currentTarget.querySelector('.icon-container') as HTMLElement;
                 if (iconElement) {
@@ -103,10 +103,10 @@ const Services = () => {
               </div>
 
               {/* Title and Description */}
-              <h3 className="text-2xl font-bold mb-4 text-white">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
                 {service.title}
               </h3>
-              <p className="text-white/80 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
@@ -115,7 +115,7 @@ const Services = () => {
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-start space-x-3 text-white/80"
+                    className="flex items-start space-x-3 text-gray-700"
                   >
                     <div className="w-2 h-2 bg-ider-yellow rounded-full mt-2 flex-shrink-0"></div>
                     <span>{feature}</span>
@@ -124,10 +124,10 @@ const Services = () => {
               </ul>
 
               {/* Learn More Link */}
-              <div className="mt-6 pt-6 border-t border-white/10">
+              <div className="mt-6 pt-6 border-t border-gray-200">
                 <a
                   href="#contact"
-                  className="text-ider-yellow hover:text-yellow-400 font-semibold inline-flex items-center space-x-2 group-hover:translate-x-2 transition-transform duration-300"
+                  className="text-ider-yellow hover:opacity-80 font-semibold inline-flex items-center space-x-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   <span>Get Started</span>
                   <span>→</span>
@@ -139,12 +139,12 @@ const Services = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <p className="text-white/80 mb-6">
+          <p className="text-gray-600 mb-6">
             Need a custom solution? We&apos;d love to discuss your project.
           </p>
           <a
             href="#contact"
-            className="bg-ider-yellow text-ider-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
+            className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
           >
             <span>Start Your Project</span>
             <span>🚀</span>

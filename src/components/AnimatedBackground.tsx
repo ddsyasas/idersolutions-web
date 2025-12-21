@@ -58,7 +58,7 @@ const AnimatedBackground = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 215, 0, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(26, 83, 162, ${particle.opacity})`;
         ctx.fill();
 
         // Connect particles
@@ -72,7 +72,7 @@ const AnimatedBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(other.x, other.y);
-            ctx.strokeStyle = `rgba(255, 215, 0, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(26, 83, 162, ${0.1 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -97,7 +97,7 @@ const AnimatedBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.3 }}
+      style={{ opacity: 0.15 }}
     />
   );
 };

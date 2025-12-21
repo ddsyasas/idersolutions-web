@@ -42,16 +42,16 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
               About IDER Solutions
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               We&apos;re your trusted partner in transforming ideas into powerful digital solutions. 
               From concept to launch, we guide you through every step of your digital journey.
             </p>
           </div>
 
-          {/* Mission Statement - Large box with dark grey background */}
-          <div className="bg-gray-800/50 rounded-3xl p-12 mb-16 text-center max-w-4xl mx-auto">
+          {/* Mission Statement - Large box with light background */}
+          <div className="bg-gray-50 rounded-3xl p-12 mb-16 text-center max-w-4xl mx-auto border border-gray-200">
             <h3 className="text-3xl font-bold mb-6 text-ider-yellow">Our Mission</h3>
-            <p className="text-xl text-white leading-relaxed">
+            <p className="text-xl text-gray-700 leading-relaxed">
               To empower individuals, startups, and established companies by turning their innovative 
               ideas into scalable digital products that drive real business results and create lasting impact.
             </p>
@@ -62,7 +62,7 @@ const About = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-gray-800/50 rounded-3xl p-8 text-center group hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+                className="bg-gray-50 rounded-3xl p-8 text-center group hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200"
                 onMouseEnter={(e) => {
                   const iconElement = e.currentTarget.querySelector('.icon-container') as HTMLElement;
                   if (iconElement) {
@@ -88,15 +88,15 @@ const About = () => {
                 >
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-white">{feature.title}</h4>
-                <p className="text-white/80 leading-relaxed">{feature.description}</p>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h4>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
 
           {/* Stats Section */}
           <div className="mt-20 text-center">
-            <h3 className="text-3xl font-bold mb-12 text-white">
+            <h3 className="text-3xl font-bold mb-12 text-gray-900">
               Trusted by <span className="text-ider-yellow">50+</span> Companies Worldwide
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -110,7 +110,7 @@ const About = () => {
                   <div className="text-4xl font-bold text-ider-yellow mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.metric}
                   </div>
-                  <div className="text-white/80 font-medium">{stat.label}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>

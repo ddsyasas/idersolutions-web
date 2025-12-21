@@ -63,10 +63,10 @@ const Contact = () => {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-ider-yellow">
             Have an idea?
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
             Let&apos;s bring it to life.
           </h3>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Ready to transform your vision into reality? Get in touch and let&apos;s discuss your next big project.
           </p>
         </div>
@@ -75,19 +75,19 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Email Contact - Box-style */}
-            <div className="bg-gray-800/50 rounded-3xl p-8">
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-ider-yellow rounded-full flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-ider-dark" />
+                  <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Get In Touch</h3>
-                  <p className="text-white/80">Drop us a line anytime</p>
+                  <h3 className="text-2xl font-bold text-gray-900">Get In Touch</h3>
+                  <p className="text-gray-600">Drop us a line anytime</p>
                 </div>
               </div>
               <a
                 href="mailto:yasas@idersolutions.com"
-                className="text-ider-yellow hover:text-yellow-400 text-xl font-semibold transition-colors duration-300"
+                className="text-ider-yellow hover:opacity-80 text-xl font-semibold transition-colors duration-300"
               >
                 yasas@idersolutions.com
               </a>
@@ -114,11 +114,11 @@ const Contact = () => {
               ].map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-ider-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-ider-dark" />
+                    <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">{feature.title}</h4>
-                    <p className="text-white/80">{feature.description}</p>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h4>
+                    <p className="text-gray-600">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -126,11 +126,11 @@ const Contact = () => {
           </div>
 
           {/* Contact Form - Box-style */}
-          <div className="bg-gray-800/50 rounded-3xl p-8">
+          <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-white font-semibold mb-2">
+                <label htmlFor="name" className="block text-gray-900 font-semibold mb-2">
                   Your Name *
                 </label>
                 <input
@@ -139,7 +139,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
                   placeholder="Enter your full name"
                   required
                 />
@@ -147,7 +147,7 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-white font-semibold mb-2">
+                <label htmlFor="email" className="block text-gray-900 font-semibold mb-2">
                   Email Address *
                 </label>
                 <input
@@ -156,7 +156,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
                   placeholder="your@email.com"
                   required
                 />
@@ -164,7 +164,7 @@ const Contact = () => {
 
               {/* Project Type */}
               <div>
-                <label htmlFor="projectType" className="block text-white font-semibold mb-2">
+                <label htmlFor="projectType" className="block text-gray-900 font-semibold mb-2">
                   Project Type
                 </label>
                 <select
@@ -172,11 +172,11 @@ const Contact = () => {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
                 >
-                  <option value="" className="bg-ider-dark">Select a service</option>
+                  <option value="">Select a service</option>
                   {projectTypes.map((type) => (
-                    <option key={type} value={type} className="bg-ider-dark">
+                    <option key={type} value={type}>
                       {type}
                     </option>
                   ))}
@@ -185,7 +185,7 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-white font-semibold mb-2">
+                <label htmlFor="message" className="block text-gray-900 font-semibold mb-2">
                   Project Details *
                 </label>
                 <textarea
@@ -194,7 +194,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300 resize-none"
                   placeholder="Tell us about your project, goals, and requirements..."
                   required
                 />
@@ -203,7 +203,7 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-ider-yellow text-ider-dark py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-all duration-300 group yellow-glow"
+                className="w-full bg-ider-yellow text-white py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all duration-300 group yellow-glow"
               >
                 <span className="flex items-center justify-center space-x-2">
                   <span>Send Message</span>
@@ -216,11 +216,11 @@ const Contact = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-white/80 text-lg">
+          <p className="text-gray-600 text-lg">
             Prefer a direct conversation? Email us at{' '}
             <a
               href="mailto:yasas@idersolutions.com"
-              className="text-ider-yellow hover:text-yellow-400 font-semibold transition-colors duration-300"
+              className="text-ider-yellow hover:opacity-80 font-semibold transition-colors duration-300"
             >
               yasas@idersolutions.com
             </a>

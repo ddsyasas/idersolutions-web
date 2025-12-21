@@ -69,14 +69,14 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Client Testimonials
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Don&apos;t just take our word for it - hear from our satisfied clients
           </p>
         </div>
 
         {/* Testimonial Slider - Box-style */}
         <div className="max-w-4xl mx-auto relative">
-          <div className="bg-gray-800/50 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-gray-50 rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-200">
             {/* Background decoration */}
             <div className="absolute top-4 left-4 text-6xl text-ider-yellow/20 font-serif">&quot;</div>
             <div className="absolute bottom-4 right-4 text-6xl text-ider-yellow/20 font-serif rotate-180">&quot;</div>
@@ -91,7 +91,7 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-xl md:text-2xl text-white mb-8 leading-relaxed italic">
+              <blockquote className="text-xl md:text-2xl text-gray-900 mb-8 leading-relaxed italic">
                 {testimonials[currentIndex].quote}
               </blockquote>
 
@@ -104,10 +104,10 @@ const Testimonials = () => {
                   className="w-16 h-16 rounded-full border-2 border-ider-yellow"
                 />
                 <div className="text-left">
-                  <div className="text-lg font-semibold text-white">
+                  <div className="text-lg font-semibold text-gray-900">
                     {testimonials[currentIndex].name}
                   </div>
-                  <div className="text-white/80">
+                  <div className="text-gray-600">
                     {testimonials[currentIndex].position}
                   </div>
                   <div className="text-ider-yellow text-sm">
@@ -121,13 +121,13 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-ider-dark p-3 rounded-full hover:bg-yellow-400 transition-all duration-300 group"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-all duration-300 group"
           >
             <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-ider-dark p-3 rounded-full hover:bg-yellow-400 transition-all duration-300 group"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-all duration-300 group"
           >
             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
@@ -141,7 +141,7 @@ const Testimonials = () => {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? 'bg-ider-yellow scale-125'
-                    : 'bg-white/30 hover:bg-white/50'
+                    : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}
@@ -150,11 +150,11 @@ const Testimonials = () => {
 
         {/* Trust Indicators */}
         <div className="mt-16 text-center">
-          <p className="text-white/80 mb-8">Trusted by companies of all sizes</p>
+          <p className="text-gray-600 mb-8">Trusted by companies of all sizes</p>
           <div className="flex justify-center items-center space-x-8 opacity-60">
             {/* Company logos would go here - using placeholder text for now */}
             {['TechStart', 'Digital Dynamics', 'GreenTech', 'InnovateLab'].map((company, index) => (
-              <div key={index} className="text-lg font-semibold text-white">
+              <div key={index} className="text-lg font-semibold text-gray-700">
                 {company}
               </div>
             ))}
