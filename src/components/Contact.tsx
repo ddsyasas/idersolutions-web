@@ -247,7 +247,18 @@ const Contact = () => {
               </div>
 
               {/* hCaptcha */}
-              <div className="h-captcha" data-captcha="true"></div>
+              <div className="my-6">
+                <div 
+                  className="h-captcha" 
+                  data-captcha="true"
+                  style={{
+                    minHeight: '78px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  }}
+                ></div>
+              </div>
 
               {/* Submit Button */}
               <button
