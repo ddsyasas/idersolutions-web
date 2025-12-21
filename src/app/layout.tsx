@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -40,6 +41,29 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://idersolutions.com'),
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/favicon-16x16.png',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  other: {
+    'msapplication-TileColor': '#da532c',
+    'theme-color': '#ffffff',
   },
   openGraph: {
     type: 'website',
@@ -83,6 +107,29 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ider Solutions",
+  "url": "https://idersolutions.com",
+  "logo": "https://idersolutions.com/logo.svg",
+  "description": "IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "contact@idersolutions.com"
+  },
+  "sameAs": [
+    "https://twitter.com/idersolutions",
+    "https://linkedin.com/company/idersolutions",
+    "https://facebook.com/idersolutions"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,50 +137,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-        
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Structured Data */}
-        <script
+      <body className="antialiased" suppressHydrationWarning>
+        <Script
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Ider Solutions",
-              "url": "https://idersolutions.com",
-              "logo": "https://idersolutions.com/logo.svg",
-              "description": "IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "email": "contact@idersolutions.com"
-              },
-              "sameAs": [
-                "https://twitter.com/idersolutions",
-                "https://linkedin.com/company/idersolutions",
-                "https://facebook.com/idersolutions"
-              ]
-            })
+            __html: JSON.stringify(structuredData),
           }}
         />
-      </head>
-      <body className="antialiased" suppressHydrationWarning>
         <DefaultGoogleAnalytics />
         <TooltipProvider>
           {children}
