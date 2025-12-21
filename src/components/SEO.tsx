@@ -20,7 +20,7 @@ export default function SEO({
   title = 'Ider Solutions - Professional Web Development & Digital Solutions',
   description = 'Ider Solutions provides professional web development, digital solutions, and innovative technology services. We specialize in creating modern, responsive websites and applications that drive business growth.',
   keywords = ['web development', 'digital solutions', 'website design'],
-  image = '/og-image.svg',
+  image = '/og-image.jpg',
   url = 'https://idersolutions.com',
   type = 'website',
   publishedTime,

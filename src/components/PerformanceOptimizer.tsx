@@ -73,7 +73,7 @@ export function DefaultPerformanceOptimizer() {
   return (
     <PerformanceOptimizer
       preloadImages={[
-        '/og-image.svg',
+        '/og-image.jpg',
         '/logo.svg'
       ]}
       prefetchUrls={[

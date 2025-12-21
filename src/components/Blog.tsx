@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
 
 const Blog = () => {
@@ -61,11 +62,14 @@ const Blog = () => {
             >
               {/* Blog Post Image */}
               <div className="relative overflow-hidden h-48">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={`Featured image for ${post.title} - ${post.excerpt.substring(0, 60)}...`}
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  unoptimized={post.image.startsWith('https://')}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 

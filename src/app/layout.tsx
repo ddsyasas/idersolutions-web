@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'IDER Solutions | Digital Solutions that Scale & Lead',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IDER Solutions | Digital Solutions that Scale & Lead',
     description: 'IDER Solutions engineers scalable web systems, AI-ready SEO, and growth-focused digital frameworks to future-proof your brand and accelerate performance.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.jpg'],
     creator: '@idersolutions',
     site: '@idersolutions',
   },
@@ -101,9 +101,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: '5toB--Itz_Zyji8oJfGnR9EdIZTgXWYCNi8Gb4enPQg',
   },
 };
 
@@ -121,7 +119,7 @@ const structuredData = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "contact@idersolutions.com"
+    "email": "yasas@idersolutions.com"
   },
   "sameAs": [
     "https://twitter.com/idersolutions",

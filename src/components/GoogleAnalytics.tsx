@@ -30,8 +30,7 @@ export default function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps)
 
 // Default Google Analytics component for Ider Solutions
 export function DefaultGoogleAnalytics() {
-  // Replace with your actual Google Analytics Measurement ID
-  const measurementId = 'G-XXXXXXXXXX'; // Replace with your GA4 measurement ID
+  const measurementId = 'G-0MJ1R984GW'; // GA4 measurement ID
   
   return <GoogleAnalytics measurementId={measurementId} />;
 } 

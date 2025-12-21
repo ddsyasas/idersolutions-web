@@ -142,7 +142,8 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="bg-ider-dark/50 p-4 rounded-lg">
-                <p className="mb-2"><strong>Email:</strong> legal@idersolutions.com</p>
+                <p className="mb-2"><strong>Email:</strong> <a href="mailto:yasas@idersolutions.com" className="text-ider-primary hover:underline">yasas@idersolutions.com</a></p>
+                <p className="mb-2"><strong>General Inquiries:</strong> <a href="mailto:info@idersolutions.com" className="text-ider-primary hover:underline">info@idersolutions.com</a></p>
                 <p className="mb-2"><strong>Address:</strong> [Your Business Address]</p>
                 <p><strong>Website:</strong> https://idersolutions.com</p>
               </div>

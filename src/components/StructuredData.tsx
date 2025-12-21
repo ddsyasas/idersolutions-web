@@ -1,7 +1,7 @@
 'use client';
 
 interface StructuredDataProps {
-  type: 'organization' | 'website' | 'article' | 'service' | 'localBusiness';
+  type: 'organization' | 'website' | 'article' | 'service' | 'localBusiness' | 'review' | 'aggregateRating' | 'breadcrumb' | 'faq' | 'contactPage';
   data: {
     name?: string;
     url?: string;
@@ -53,7 +53,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",
-            email: data.email || "contact@idersolutions.com"
+            email: data.email || "yasas@idersolutions.com"
           },
           sameAs: data.socialLinks || [
             "https://twitter.com/idersolutions",
@@ -125,7 +125,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           description: data.description || "Professional web development and digital solutions",
           url: data.url || "https://idersolutions.com",
           telephone: data.telephone,
-          email: data.email || "contact@idersolutions.com",
+          email: data.email || "yasas@idersolutions.com",
           address: {
             "@type": "PostalAddress",
             streetAddress: data.streetAddress,
@@ -140,6 +140,59 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             longitude: data.geo.longitude
           },
           openingHours: data.openingHours || "Mo-Fr 09:00-17:00"
+        };
+
+      case 'review':
+        return {
+          ...baseData,
+          "@type": "Review",
+          itemReviewed: {
+            "@type": "Organization",
+            name: data.name || "Ider Solutions"
+          },
+          author: {
+            "@type": "Person",
+            name: data.author || "Client"
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: data.datePublished || "5",
+            bestRating: "5"
+          },
+          reviewBody: data.description || ""
+        };
+
+      case 'aggregateRating':
+        return {
+          ...baseData,
+          "@type": "AggregateRating",
+          ratingValue: data.datePublished || "5",
+          reviewCount: data.postalCode || "4",
+          bestRating: "5",
+          worstRating: "1"
+        };
+
+      case 'breadcrumb':
+        return {
+          ...baseData,
+          "@type": "BreadcrumbList",
+          itemListElement: data.socialLinks || []
+        };
+
+      case 'faq':
+        return {
+          ...baseData,
+          "@type": "FAQPage",
+          mainEntity: data.socialLinks || []
+        };
+
+      case 'contactPage':
+        return {
+          ...baseData,
+          "@type": "ContactPage",
+          name: data.name || "Contact Us - Ider Solutions",
+          description: data.description || "Get in touch with Ider Solutions for your digital project needs",
+          url: data.url || "https://idersolutions.com/#contact"
         };
 
       default:

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowRight, Globe } from 'lucide-react';
 
 const Portfolio = () => {
@@ -113,11 +114,14 @@ const Portfolio = () => {
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-48">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.description} - IDER Solutions portfolio project`}
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  unoptimized={project.image.startsWith('https://')}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ider-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 

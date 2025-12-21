@@ -15,6 +15,7 @@ const Footer = () => {
     { label: 'Services', href: '#services' },
     { label: 'Portfolio', href: '#portfolio' },
     { label: 'Blog', href: '#blog' },
+    { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -25,7 +26,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Globe, href: '#', label: 'Website' },
-    { icon: Mail, href: 'mailto:yasmasdreamz@gmail.co', label: 'Email' },
+    { icon: Mail, href: 'mailto:yasas@idersolutions.com', label: 'Email' },
     { icon: Code, href: '#', label: 'GitHub' },
     { icon: Zap, href: '#', label: 'LinkedIn' },
   ];

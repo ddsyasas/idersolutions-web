@@ -19,6 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
     { href: '#services', label: 'Services' },
     { href: '#portfolio', label: 'Portfolio' },
     { href: '#blog', label: 'Blog' },
+    { href: '#faq', label: 'FAQ' },
     { href: '#contact', label: 'Contact' },
   ];
 

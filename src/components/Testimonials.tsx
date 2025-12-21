@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const Testimonials = () => {
@@ -97,11 +98,14 @@ const Testimonials = () => {
 
               {/* Author Info */}
               <div className="flex items-center justify-center space-x-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={testimonials[currentIndex].avatar}
-                  alt={testimonials[currentIndex].name}
-                  className="w-16 h-16 rounded-full border-2 border-ider-yellow"
+                  alt={`Photo of ${testimonials[currentIndex].name}, ${testimonials[currentIndex].position} at ${testimonials[currentIndex].company}`}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 rounded-full border-2 border-ider-yellow object-cover"
+                  loading="lazy"
+                  unoptimized={testimonials[currentIndex].avatar.startsWith('https://')}
                 />
                 <div className="text-left">
                   <div className="text-lg font-semibold text-gray-900">

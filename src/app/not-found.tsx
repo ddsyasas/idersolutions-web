@@ -51,8 +51,8 @@ export default function NotFound() {
         
         <div className="mt-12 text-xs text-gray-500">
           <p>If you believe this is an error, please contact us at{' '}
-            <a href="mailto:contact@idersolutions.com" className="text-ider-primary hover:underline">
-              contact@idersolutions.com
+            <a href="mailto:yasas@idersolutions.com" className="text-ider-primary hover:underline">
+              yasas@idersolutions.com
             </a>
           </p>
         </div>
