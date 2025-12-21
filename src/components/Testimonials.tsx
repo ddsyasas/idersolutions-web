@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const testimonials = [
     {
       id: 1,
@@ -44,28 +42,53 @@ const Testimonials = () => {
     },
   ];
 
-  const nextTestimonial = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  }, [testimonials.length]);
+  // Duplicate testimonials multiple times for seamless infinite scroll (no visible jump)
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
+  const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
+    <div className="flex-shrink-0 w-[350px] sm:w-[400px] md:w-[450px] bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 mx-3 hover:scale-[1.02]">
+      {/* Stars */}
+      <div className="flex mb-4">
+        {[...Array(testimonial.rating)].map((_, i) => (
+          <Star key={i} className="w-5 h-5 fill-ider-yellow text-ider-yellow" />
+        ))}
+      </div>
 
-  // Auto-play functionality
-  useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, [nextTestimonial]);
+      {/* Quote */}
+      <blockquote className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
+        &quot;{testimonial.quote}&quot;
+      </blockquote>
+
+      {/* Author Info */}
+      <div className="flex items-center space-x-4">
+        <Image
+          src={testimonial.avatar}
+          alt={`Photo of ${testimonial.name}, ${testimonial.position} at ${testimonial.company}`}
+          width={56}
+          height={56}
+          className="w-14 h-14 rounded-full border-2 border-ider-yellow object-cover flex-shrink-0"
+          loading="lazy"
+          unoptimized={testimonial.avatar.startsWith('https://')}
+        />
+        <div className="flex-1 min-w-0">
+          <div className="text-base font-semibold text-gray-900 truncate">
+            {testimonial.name}
+          </div>
+          <div className="text-sm text-gray-600 truncate">
+            {testimonial.position}
+          </div>
+          <div className="text-sm text-ider-yellow truncate">
+            {testimonial.company}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        {/* Section Header - Text directly on dark background */}
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ider-yellow">
             Client Testimonials
@@ -75,93 +98,14 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonial Slider - Box-style */}
-        <div className="max-w-4xl mx-auto relative">
-          <div className="bg-gray-50 rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-200">
-            {/* Background decoration */}
-            <div className="absolute top-4 left-4 text-6xl text-ider-yellow/20 font-serif">&quot;</div>
-            <div className="absolute bottom-4 right-4 text-6xl text-ider-yellow/20 font-serif rotate-180">&quot;</div>
-
-            {/* Testimonial Content */}
-            <div className="relative z-10 text-center">
-              {/* Stars */}
-              <div className="flex justify-center mb-6">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <span key={i} className="text-ider-yellow text-2xl">★</span>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <blockquote className="text-xl md:text-2xl text-gray-900 mb-8 leading-relaxed italic">
-                {testimonials[currentIndex].quote}
-              </blockquote>
-
-              {/* Author Info */}
-              <div className="flex items-center justify-center space-x-4">
-                <Image
-                  src={testimonials[currentIndex].avatar}
-                  alt={`Photo of ${testimonials[currentIndex].name}, ${testimonials[currentIndex].position} at ${testimonials[currentIndex].company}`}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 rounded-full border-2 border-ider-yellow object-cover"
-                  loading="lazy"
-                  unoptimized={testimonials[currentIndex].avatar.startsWith('https://')}
-                />
-                <div className="text-left">
-                  <div className="text-lg font-semibold text-gray-900">
-                    {testimonials[currentIndex].name}
-                  </div>
-                  <div className="text-gray-600">
-                    {testimonials[currentIndex].position}
-                  </div>
-                  <div className="text-ider-yellow text-sm">
-                    {testimonials[currentIndex].company}
-                  </div>
-                </div>
-              </div>
+        {/* Scrolling Row */}
+        <div className="relative">
+          <div className="overflow-hidden mask-fade">
+            <div className="flex animate-scroll-left">
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <TestimonialCard key={`testimonial-${index}`} testimonial={testimonial} />
+              ))}
             </div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-all duration-300 group"
-          >
-            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
-          </button>
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-ider-yellow text-white p-3 rounded-full hover:opacity-90 transition-all duration-300 group"
-          >
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-ider-yellow scale-125'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-8">Trusted by companies of all sizes</p>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
-            {/* Company logos would go here - using placeholder text for now */}
-            {['TechStart', 'Digital Dynamics', 'GreenTech', 'InnovateLab'].map((company, index) => (
-              <div key={index} className="text-lg font-semibold text-gray-700">
-                {company}
-              </div>
-            ))}
           </div>
         </div>
       </div>

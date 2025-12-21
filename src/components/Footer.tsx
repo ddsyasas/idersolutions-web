@@ -11,12 +11,13 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Blog', href: '#blog' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Careers', href: '/careers' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const legalLinks = [

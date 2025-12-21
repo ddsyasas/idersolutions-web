@@ -81,6 +81,7 @@ export function DefaultPerformanceOptimizer() {
         'https://idersolutions.com/services',
         'https://idersolutions.com/portfolio',
         'https://idersolutions.com/contact',
+        'https://idersolutions.com/careers',
         'https://idersolutions.com/blog'
       ]}
       preconnectDomains={[

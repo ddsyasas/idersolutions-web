@@ -257,3 +257,66 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Testimonial scroll animations - 4 sets of testimonials, so we animate 25% (one set) for seamless loop */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 20s linear infinite;
+  will-change: transform;
+}
+
+/* Faster animation on mobile */
+@media (max-width: 768px) {
+  .animate-scroll-left {
+    animation: scroll-left 4.5s linear infinite;
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right 4.5s linear infinite;
+  }
+}
+
+.animate-scroll-left:hover,
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+/* Fade mask for testimonial rows */
+.mask-fade {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
