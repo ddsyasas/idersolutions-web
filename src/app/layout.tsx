@@ -70,8 +70,9 @@ export const metadata: Metadata = {
       {
         url: 'https://idersolutions.com/og-image.jpg',
         width: 1200,
-        height: 630,
+        height: 633,
         alt: 'IDER Solutions | Digital Solutions that Scale & Lead',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -129,14 +130,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Explicit OG tags for WhatsApp compatibility - placed early in head */}
-        <meta property="og:image" content="https://idersolutions.com/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:alt" content="IDER Solutions | Digital Solutions that Scale & Lead" />
-      </head>
       <body className="antialiased" suppressHydrationWarning>
         <Script
           id="structured-data"
