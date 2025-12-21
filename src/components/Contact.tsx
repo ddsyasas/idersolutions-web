@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Globe, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const { toast } = useToast();
+  const captchaRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,49 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState('');
+
+  // Re-initialize hCaptcha on component mount
+  useEffect(() => {
+    const initCaptcha = () => {
+      if (typeof window === 'undefined') return;
+
+      const w = window as any;
+      
+      // Check if Web3Forms is loaded
+      if (w.Web3Forms && captchaRef.current) {
+        // Reset any existing captcha
+        if (captchaRef.current.innerHTML) {
+          captchaRef.current.innerHTML = '';
+        }
+
+        // Let Web3Forms re-initialize the form and captcha
+        if (formRef.current) {
+          w.Web3Forms.init(formRef.current);
+        }
+      } else if (w.hcaptcha && captchaRef.current) {
+        // Fallback: Use hCaptcha directly if Web3Forms not ready
+        try {
+          if (captchaRef.current.innerHTML) {
+            captchaRef.current.innerHTML = '';
+          }
+          w.hcaptcha.render(captchaRef.current, {
+            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2' // Web3Forms public key
+          });
+        } catch (error) {
+          console.log('Captcha already rendered or error:', error);
+        }
+      } else {
+        // Not ready yet, try again
+        setTimeout(initCaptcha, 200);
+      }
+    };
+
+    const timer = setTimeout(initCaptcha, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []); // Re-run on every mount
 
   const projectTypes = [
     'Web Development',
@@ -173,7 +218,7 @@ const Contact = () => {
 
           {/* Contact Form - Box-style */}
           <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-gray-900 font-semibold mb-2">
@@ -249,6 +294,7 @@ const Contact = () => {
               {/* hCaptcha */}
               <div className="my-6">
                 <div 
+                  ref={captchaRef}
                   className="h-captcha" 
                   data-captcha="true"
                   style={{
