@@ -312,7 +312,7 @@ export default function CareersPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="/contact"
+                href="mailto:yasas@idersolutions.com"
                 className="bg-ider-yellow text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all duration-300"
               >
                 Get in Touch
@@ -323,21 +323,6 @@ export default function CareersPage() {
               >
                 Learn About Us
               </a>
-            </div>
-          </section>
-
-          {/* Internal Linking Section */}
-          <section className="mt-16 pt-12 border-t border-gray-200">
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <a href="/" className="text-gray-600 hover:text-ider-yellow transition-colors">Home</a>
-              <span className="text-gray-400">•</span>
-              <a href="/about" className="text-gray-600 hover:text-ider-yellow transition-colors">About Us</a>
-              <span className="text-gray-400">•</span>
-              <a href="/services" className="text-gray-600 hover:text-ider-yellow transition-colors">Services</a>
-              <span className="text-gray-400">•</span>
-              <a href="/portfolio" className="text-gray-600 hover:text-ider-yellow transition-colors">Portfolio</a>
-              <span className="text-gray-400">•</span>
-              <a href="/contact" className="text-gray-600 hover:text-ider-yellow transition-colors">Contact</a>
             </div>
           </section>
         </div>

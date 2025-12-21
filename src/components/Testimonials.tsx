@@ -42,11 +42,8 @@ const Testimonials = () => {
     },
   ];
 
-  // Duplicate testimonials multiple times for seamless infinite scroll (no visible jump)
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
-
   const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="flex-shrink-0 w-[350px] sm:w-[400px] md:w-[450px] bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 mx-3 hover:scale-[1.02]">
+    <div className="inline-block align-top w-[350px] sm:w-[400px] md:w-[450px] h-[280px] sm:h-[300px] md:h-[320px] bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] mx-3 whitespace-normal overflow-hidden">
       {/* Stars */}
       <div className="flex mb-4">
         {[...Array(testimonial.rating)].map((_, i) => (
@@ -55,7 +52,7 @@ const Testimonials = () => {
       </div>
 
       {/* Quote */}
-      <blockquote className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
+      <blockquote className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed line-clamp-4">
         &quot;{testimonial.quote}&quot;
       </blockquote>
 
@@ -101,9 +98,15 @@ const Testimonials = () => {
         {/* Scrolling Row */}
         <div className="relative">
           <div className="overflow-hidden mask-fade">
-            <div className="flex animate-scroll-left">
-              {duplicatedTestimonials.map((testimonial, index) => (
-                <TestimonialCard key={`testimonial-${index}`} testimonial={testimonial} />
+            <div className="testimonial-track whitespace-nowrap">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={`set1-${index}`} testimonial={testimonial} />
+              ))}
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={`set2-${index}`} testimonial={testimonial} />
+              ))}
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={`set3-${index}`} testimonial={testimonial} />
               ))}
             </div>
           </div>
@@ -113,4 +116,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials; 
+export default Testimonials;
