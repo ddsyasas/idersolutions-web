@@ -65,7 +65,7 @@ const AboutPreview = () => {
                     </div>
 
                     {/* Stats Row */}
-                    <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8">
+                    <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                             {[
                                 { metric: '100+', label: 'Projects Delivered' },
@@ -75,7 +75,7 @@ const AboutPreview = () => {
                             ].map((stat, index) => (
                                 <div key={index}>
                                     <div className="text-3xl font-bold text-ider-yellow mb-1">{stat.metric}</div>
-                                    <div className="text-gray-400">{stat.label}</div>
+                                    <div className="text-gray-600">{stat.label}</div>
                                 </div>
                             ))}
                         </div>
