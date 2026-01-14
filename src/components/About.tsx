@@ -21,7 +21,6 @@ const About = () => {
       name: 'Sajana Yasas',
       role: 'Founder, CEO & Head of Development',
       bio: '7+ years of digital expertise with a science-driven approach. Leads development, architecting websites, web apps, and mobile solutions.',
-      highlight: true,
       linkedin: 'https://linkedin.com/in/ddsyasas',
     },
     {
@@ -76,276 +75,191 @@ const About = () => {
   return (
     <section className="py-12 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
 
-          {/* Hero Section with Founder */}
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-ider-yellow">
-                About IDER Solutions
-              </h1>
-              <p className="text-xl text-gray-600">
-                Where Science Meets Creativity
-              </p>
-            </div>
+          {/* Hero */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-ider-yellow">
+              About IDER Solutions
+            </h1>
+            <p className="text-xl text-gray-600">
+              Where Science Meets Creativity
+            </p>
+          </div>
 
-            {/* Founder Section - Consolidated */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden">
-              <div className="grid lg:grid-cols-2">
-                {/* Left - Photo & Info */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-ider-yellow flex-shrink-0">
-                      <Image
-                        src="/Sajana Yasas.webp"
-                        alt="Sajana Yasas - Founder of IDER Solutions"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h2 className="text-2xl font-bold text-white">Sajana Yasas</h2>
-                      <p className="text-ider-yellow font-medium">Founder & CEO</p>
-                      <div className="flex gap-4 mt-2">
-                        <a
-                          href="https://linkedin.com/in/ddsyasas"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-ider-yellow transition-colors"
-                        >
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                        <a
-                          href="https://yasas.dev"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-ider-yellow transition-colors"
-                        >
-                          <Globe className="w-5 h-5" />
-                        </a>
-                      </div>
+          {/* Founder Section */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden mb-16">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-10 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-6 mb-8">
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-ider-yellow flex-shrink-0">
+                    <Image
+                      src="/Sajana Yasas.webp"
+                      alt="Sajana Yasas - Founder of IDER Solutions"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">Sajana Yasas</h2>
+                    <p className="text-ider-yellow">Founder & CEO</p>
+                    <div className="flex gap-4 mt-2">
+                      <a href="https://linkedin.com/in/ddsyasas" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ider-yellow transition-colors">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a href="https://yasas.dev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ider-yellow transition-colors">
+                        <Globe className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
-                  <blockquote className="text-gray-300 text-lg leading-relaxed italic border-l-4 border-ider-yellow pl-6">
-                    &ldquo;We&apos;re here to prove that world-class digital work can come from anywhere, including Sri Lanka.
-                    Every business deserves a partner who delivers results, not excuses.&rdquo;
-                  </blockquote>
                 </div>
+                <blockquote className="text-gray-300 text-lg leading-relaxed italic border-l-4 border-ider-yellow pl-6">
+                  &ldquo;We&apos;re here to prove that exceptional digital solutions can come from Sri Lanka,
+                  and that every business deserves a partner who delivers results, not excuses.&rdquo;
+                </blockquote>
+              </div>
 
-                {/* Right - Story & Stats */}
-                <div className="bg-white/5 p-8 lg:p-12">
-                  <div className="grid grid-cols-2 gap-6 mb-8">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-ider-yellow">2023</div>
-                      <div className="text-gray-400 text-sm">Founded</div>
+              <div className="bg-white/5 p-10 lg:p-12">
+                <div className="grid grid-cols-2 gap-8 mb-8">
+                  {[
+                    { value: '2023', label: 'Founded' },
+                    { value: '7+', label: 'Years Experience' },
+                    { value: '100+', label: 'Projects' },
+                    { value: '15+', label: 'Countries' },
+                  ].map((stat, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-3xl font-bold text-ider-yellow">{stat.value}</div>
+                      <div className="text-gray-400">{stat.label}</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-ider-yellow">7+</div>
-                      <div className="text-gray-400 text-sm">Years Experience</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-ider-yellow">100+</div>
-                      <div className="text-gray-400 text-sm">Projects</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-ider-yellow">15+</div>
-                      <div className="text-gray-400 text-sm">Countries</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed text-sm">
-                    Founded in 2023, IDER Solutions brings together over seven years of freelancing experience
-                    with a scientific, data-driven approach. We treat every campaign like an experiment—hypothesis,
-                    testing, measurement, and optimization.
-                  </p>
+                  ))}
                 </div>
+                <p className="text-gray-300 leading-relaxed">
+                  Founded in 2023, IDER Solutions brings together over seven years of freelancing experience
+                  with a scientific, data-driven approach. We treat every campaign like an experiment—hypothesis,
+                  testing, measurement, and optimization.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Philosophy + Purpose - Combined */}
-          <div className="mb-20">
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Philosophy */}
-              <div className="lg:col-span-2 bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Philosophy</h2>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-ider-yellow rounded-lg flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="w-4 h-4 text-white" />
+          {/* Philosophy + Purpose */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            <div className="lg:col-span-2 bg-gray-50 rounded-3xl p-10 border border-gray-200">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Philosophy</h2>
+              <div className="grid sm:grid-cols-2 gap-8">
+                {[
+                  { icon: BarChart3, title: 'Measure First, Create Second', desc: 'Every strategy backed by data and research.' },
+                  { icon: Users, title: 'Precision With Human Touch', desc: 'Analytically sound, emotionally resonant.' },
+                  { icon: Handshake, title: 'Transparent Partnership', desc: 'An extension of your team, not a vendor.' },
+                  { icon: TrendingUp, title: 'Long-Term Growth', desc: 'Sustainable strategies over vanity metrics.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-ider-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Measure First, Create Second</h4>
-                      <p className="text-gray-600 text-sm">Every strategy backed by data and research.</p>
+                      <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-gray-600">{item.desc}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-ider-yellow rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Users className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Precision With Human Touch</h4>
-                      <p className="text-gray-600 text-sm">Analytically sound, emotionally resonant.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-ider-yellow rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Handshake className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Transparent Partnership</h4>
-                      <p className="text-gray-600 text-sm">An extension of your team, not a vendor.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-ider-yellow rounded-lg flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Long-Term Growth</h4>
-                      <p className="text-gray-600 text-sm">Sustainable strategies over vanity metrics.</p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
+            </div>
 
-              {/* Purpose */}
-              <div className="bg-ider-yellow rounded-3xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-6">Our Purpose</h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Globe className="w-5 h-5 flex-shrink-0 mt-1" />
+            <div className="bg-ider-yellow rounded-3xl p-10 text-white">
+              <h2 className="text-2xl font-bold mb-8">Our Purpose</h2>
+              <div className="space-y-6">
+                {[
+                  { icon: Globe, title: 'Democratizing Quality', desc: 'Professional solutions for every budget.' },
+                  { icon: Award, title: 'Proving Local Excellence', desc: 'World-class work from Sri Lanka.' },
+                  { icon: Target, title: 'Creating Real Impact', desc: 'Businesses transformed, goals achieved.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <item.icon className="w-6 h-6 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold">Democratizing Quality</h4>
-                      <p className="text-white/80 text-sm">Professional solutions for every budget.</p>
+                      <h4 className="font-bold mb-1">{item.title}</h4>
+                      <p className="text-white/80">{item.desc}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Award className="w-5 h-5 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold">Proving Local Excellence</h4>
-                      <p className="text-white/80 text-sm">World-class work from Sri Lanka.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Target className="w-5 h-5 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold">Creating Real Impact</h4>
-                      <p className="text-white/80 text-sm">Businesses transformed, goals achieved.</p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Team Section - Modern Grid with visible bios */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Meet Our Team</h2>
-            <p className="text-gray-500 text-center mb-10">The people behind your digital success</p>
-
-            {/* Modern Team Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {/* Team Section - Clean & Consistent */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Meet Our Team</h2>
+            <div className="space-y-6">
               {team.map((member, index) => (
                 <div
                   key={index}
-                  className={`group relative p-5 rounded-2xl transition-all duration-300 hover:bg-gray-50 ${member.highlight ? 'bg-gray-900 text-white hover:bg-gray-800 col-span-2 md:col-span-1' : ''
-                    }`}
+                  className="flex flex-col md:flex-row md:items-start gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:border-ider-yellow transition-colors"
                 >
-                  {/* Name & Role */}
-                  <div className="mb-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className={`font-bold text-sm ${member.highlight ? 'text-ider-yellow' : 'text-gray-900'}`}>
-                        {member.name}
-                      </h3>
+                  <div className="md:w-1/3">
+                    <div className="flex items-center gap-3">
+                      <h3 className="font-bold text-gray-900">{member.name}</h3>
                       {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`opacity-50 hover:opacity-100 transition-opacity ${member.highlight ? 'text-white' : 'text-gray-600'}`}
-                        >
-                          <Linkedin className="w-3.5 h-3.5" />
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ider-yellow transition-colors">
+                          <Linkedin className="w-4 h-4" />
                         </a>
                       )}
                     </div>
-                    <p className={`text-xs font-medium ${member.highlight ? 'text-gray-400' : 'text-ider-yellow'}`}>
-                      {member.role}
-                    </p>
+                    <p className="text-ider-yellow">{member.role}</p>
                   </div>
-
-                  {/* Bio */}
-                  <p className={`text-xs leading-relaxed ${member.highlight ? 'text-gray-300' : 'text-gray-500'}`}>
-                    {member.bio}
-                  </p>
-
-                  {/* Accent line */}
-                  <div className={`absolute bottom-0 left-5 right-5 h-0.5 rounded-full transition-all duration-300 ${member.highlight
-                      ? 'bg-ider-yellow'
-                      : 'bg-transparent group-hover:bg-ider-yellow'
-                    }`} />
+                  <p className="md:w-2/3 text-gray-600 leading-relaxed">{member.bio}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Values + Industries - Combined Row */}
-          <div className="mb-20">
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* The IDER Code */}
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">The IDER Code</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  {values.map((value, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                      <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-ider-yellow transition-colors">
-                        <value.icon className="w-5 h-5 text-ider-yellow" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 text-sm">{value.title}</h4>
-                        <p className="text-gray-500 text-xs">{value.desc}</p>
-                      </div>
+          {/* Values + Industries */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">The IDER Code</h2>
+              <div className="grid grid-cols-2 gap-6">
+                {values.map((value, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <value.icon className="w-5 h-5 text-ider-yellow" />
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{value.title}</h4>
+                      <p className="text-gray-600">{value.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Industries */}
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Industries We Serve</h2>
-                <div className="flex flex-wrap gap-3">
-                  {specializations.map((spec, index) => (
-                    <span
-                      key={index}
-                      className="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-ider-yellow hover:text-white transition-colors cursor-default"
-                    >
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-500 text-sm mt-4">
-                  We&apos;re industry-agnostic but results-focused. Our data-driven approach adapts to your specific market dynamics.
-                </p>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Industries We Serve</h2>
+              <div className="flex flex-wrap gap-3">
+                {specializations.map((spec, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-100 text-gray-700 px-5 py-3 rounded-full font-medium hover:bg-ider-yellow hover:text-white transition-colors"
+                  >
+                    {spec}
+                  </span>
+                ))}
               </div>
+              <p className="text-gray-600 mt-6 leading-relaxed">
+                We&apos;re industry-agnostic but results-focused. Our data-driven approach adapts to your specific market dynamics.
+              </p>
             </div>
           </div>
 
           {/* CTA */}
           <div className="text-center bg-gray-50 rounded-3xl p-12 border border-gray-200">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Work With Us?</h2>
-            <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
               Let&apos;s discuss how we can help transform your digital presence and achieve your business goals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/pricing"
-                className="bg-gray-200 text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300"
-              >
+              <a href="/pricing" className="bg-gray-200 text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-300 transition-all">
                 View Our Pricing
               </a>
-              <a
-                href="/contact"
-                className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 yellow-glow"
-              >
+              <a href="/contact" className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all yellow-glow">
                 Get in Touch →
               </a>
             </div>
