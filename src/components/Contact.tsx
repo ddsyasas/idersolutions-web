@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Globe, Zap } from 'lucide-react';
+import { Mail, Globe, Zap, Phone } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 // Service categories and packages matching pricing page
@@ -253,7 +253,7 @@ const Contact = () => {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Get In Touch</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Email Us</h3>
                   <p className="text-gray-600">Drop us a line anytime</p>
                 </div>
               </div>
@@ -263,6 +263,41 @@ const Contact = () => {
               >
                 yasas@idersolutions.com
               </a>
+            </div>
+
+            {/* Phone Contact - Box-style */}
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-16 h-16 bg-ider-yellow rounded-full flex items-center justify-center">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">Call Us</h3>
+                  <p className="text-gray-600">We&apos;re available for you</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">🇺🇸</span>
+                  <a
+                    href="tel:+16462380875"
+                    className="text-ider-yellow hover:opacity-80 text-lg font-semibold transition-colors duration-300"
+                  >
+                    +1 (646) 238-0875
+                  </a>
+                  <span className="text-gray-500 text-sm">USA</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">🇱🇰</span>
+                  <a
+                    href="tel:+94717673521"
+                    className="text-ider-yellow hover:opacity-80 text-lg font-semibold transition-colors duration-300"
+                  >
+                    +94 71 767 3521
+                  </a>
+                  <span className="text-gray-500 text-sm">Sri Lanka</span>
+                </div>
+              </div>
             </div>
 
             {/* Features */}
