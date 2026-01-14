@@ -5,8 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DefaultGoogleAnalytics } from "@/components/GoogleAnalytics";
-// 🎄 CHRISTMAS EFFECTS - Remove this import after Christmas
-import { ChristmasEffects } from "@/components/christmas";
 
 export const metadata: Metadata = {
   title: {
@@ -146,8 +144,6 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <TooltipProvider>
-          {/* 🎄 CHRISTMAS EFFECTS - Remove this line after Christmas */}
-          <ChristmasEffects />
           {children}
           <Toaster />
           <Sonner />
