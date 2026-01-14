@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us | IDER Solutions - Get in Touch",
-  description: "Get in touch with IDER Solutions for your digital needs. Contact us for web development, digital marketing, mobile app development, and custom software solutions.",
+  title: "Contact IDER Solutions | Get a Free Consultation",
+  description: "Ready to grow your business? Contact us for a free strategy consultation. We'll discuss your goals and build a plan that delivers real, measurable results.",
   keywords: [
     "contact ider solutions",
     "get in touch",
@@ -92,7 +92,7 @@ export default function ContactPage() {
               <li>Contact Us</li>
             </ol>
           </nav>
-          
+
           <Contact />
         </div>
       </main>

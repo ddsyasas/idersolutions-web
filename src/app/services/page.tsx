@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Services | IDER Solutions - Web Development, Digital Marketing & More",
-  description: "Comprehensive digital solutions including web development, mobile apps, digital marketing, and design services. Custom websites, SEO optimization, social media management, and brand identity design.",
+  title: "Digital Growth Services | IDER Solutions",
+  description: "Data-driven digital marketing, custom applications, SEO, social media, and brand strategy. Solutions designed for measurable growth. Explore our services.",
   keywords: [
     "web development services",
     "digital marketing services",

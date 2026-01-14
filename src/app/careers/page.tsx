@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Careers | IDER Solutions - Join Our Team",
-  description: "Join IDER Solutions and be part of an innovative team building cutting-edge digital solutions. Explore career opportunities in web development, digital marketing, and technology.",
+  title: "Careers | Join the IDER Solutions Team",
+  description: "Join a growing, data-driven digital agency. We're hiring marketers, developers, and creatives who want to build solutions that make a real impact. Apply now.",
   keywords: [
     "careers",
     "jobs",

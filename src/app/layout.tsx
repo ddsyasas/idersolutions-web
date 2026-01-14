@@ -8,10 +8,10 @@ import { DefaultGoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "IDER Solutions | Web Development, SEO & Digital Marketing Agency",
-    template: "%s | IDER Solutions"
+    default: "IDER Solutions | Data-Driven Digital Growth Agency",
+    template: "%s"
   },
-  description: "IDER Solutions is a digital agency specializing in web development, SEO, social media marketing, app development and design services. Get a free consultation today. USA: +1 (646) 238-0875 | Sri Lanka: +94 71 767 3521",
+  description: "Grow your business or launch your idea with data-driven digital marketing and custom solutions. Strategy backed by insights. Results you can measure.",
   keywords: [
     "web development company",
     "digital marketing agency",

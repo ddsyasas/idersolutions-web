@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "About Us | IDER Solutions",
-  description: "Learn about IDER Solutions - your trusted partner in transforming ideas into powerful digital solutions. Expert team delivering fast, modern, and scalable web development, digital marketing, and technology services.",
+  title: "About Us | IDER Solutions - Our Story & Team",
+  description: "Meet the team behind IDER Solutions. We combine data, strategy, and creativity to grow businesses. Founded 2023 in Sri Lanka, serving clients worldwide.",
   keywords: [
     "about ider solutions",
     "digital solutions company",
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <StructuredData 
+      <StructuredData
         type="organization"
         data={{
           name: "IDER Solutions",
@@ -77,7 +77,7 @@ export default function AboutPage() {
               <li>About Us</li>
             </ol>
           </nav>
-          
+
           <About />
         </div>
       </main>
