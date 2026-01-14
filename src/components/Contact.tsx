@@ -4,6 +4,60 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Globe, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+// Service categories and packages matching pricing page
+const serviceOptions = {
+  'Digital Marketing': {
+    'SEO Services': [
+      'Starter SEO Package (Rs. 45,000 / $150/mo)',
+      'Growth SEO Package (Rs. 85,000 / $280/mo)',
+      'Enterprise SEO Solution (Custom)',
+    ],
+    'Social Media Marketing': [
+      'Essential Social Package (Rs. 35,000 / $120/mo)',
+      'Premium Social Package (Rs. 75,000 / $250/mo)',
+      'Full-Service Social Media (Rs. 150,000+ / $500+/mo)',
+    ],
+    'Content Creation': [
+      'Blog & Article Writing',
+      'Social Media Content Package (Rs. 25,000 / $85/mo)',
+      'Video Editing & Multimedia',
+    ],
+  },
+  'Web Development': {
+    'Website Development': [
+      'Landing Page (Rs. 50,000 / $170)',
+      'Service-Based Website (Rs. 120,000 / $400)',
+      'E-Commerce Platform (Rs. 200,000 / $670)',
+      'Enterprise Custom Website (Rs. 350,000+ / $1,200+)',
+    ],
+    'App Development': [
+      'Mobile App Development (Rs. 350,000+ / $1,200+)',
+      'Web Application / SaaS Platform (Rs. 250,000+ / $850+)',
+      'Custom Enterprise Solutions (Custom)',
+    ],
+  },
+  'Design & Branding': {
+    'Logo Design': [
+      'Basic Logo Design (Rs. 15,000 / $50)',
+      'Premium Logo Package (Rs. 35,000 / $120)',
+    ],
+    'Brand Identity': [
+      'Brand Identity Package (Rs. 75,000+ / $250+)',
+    ],
+    'UI/UX Design': [
+      'Mobile App UI Design (Rs. 50,000+ / $170+)',
+      'Web App UI Design (Rs. 65,000+ / $220+)',
+      'Complete Design System (Custom)',
+    ],
+  },
+  'Custom Solution': {
+    'Other': ['Custom Project - Please describe in message'],
+  },
+};
+
+type ServiceCategory = keyof typeof serviceOptions;
+type ServiceType<T extends ServiceCategory> = keyof typeof serviceOptions[T];
+
 const Contact = () => {
   const { toast } = useToast();
   const captchaRef = useRef<HTMLDivElement>(null);
@@ -11,11 +65,26 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: '',
+    serviceCategory: '' as ServiceCategory | '',
+    serviceType: '',
+    package: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState('');
+
+  // Get available service types based on selected category
+  const getServiceTypes = () => {
+    if (!formData.serviceCategory) return [];
+    return Object.keys(serviceOptions[formData.serviceCategory as ServiceCategory]);
+  };
+
+  // Get available packages based on selected service type
+  const getPackages = () => {
+    if (!formData.serviceCategory || !formData.serviceType) return [];
+    const category = serviceOptions[formData.serviceCategory as ServiceCategory];
+    return category[formData.serviceType as keyof typeof category] || [];
+  };
 
   // Re-initialize hCaptcha on component mount
   useEffect(() => {
@@ -23,7 +92,7 @@ const Contact = () => {
       if (typeof window === 'undefined') return;
 
       const w = window as any;
-      
+
       // Check if Web3Forms is loaded
       if (w.Web3Forms && captchaRef.current) {
         // Reset any existing captcha
@@ -59,14 +128,6 @@ const Contact = () => {
       clearTimeout(timer);
     };
   }, []); // Re-run on every mount
-
-  const projectTypes = [
-    'Web Development',
-    'Mobile App Development',
-    'Digital Marketing',
-    'Graphic Design',
-    'Custom Solution',
-  ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -116,7 +177,9 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
-          projectType: '',
+          serviceCategory: '',
+          serviceType: '',
+          package: '',
           message: '',
         });
       } else {
@@ -140,10 +203,28 @@ const Contact = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    // Reset dependent fields when parent changes
+    if (name === 'serviceCategory') {
+      setFormData({
+        ...formData,
+        serviceCategory: value as ServiceCategory | '',
+        serviceType: '',
+        package: '',
+      });
+    } else if (name === 'serviceType') {
+      setFormData({
+        ...formData,
+        serviceType: value,
+        package: '',
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   return (
@@ -253,26 +334,72 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Project Type */}
+              {/* Service Category */}
               <div>
-                <label htmlFor="projectType" className="block text-gray-900 font-semibold mb-2">
-                  Project Type
+                <label htmlFor="serviceCategory" className="block text-gray-900 font-semibold mb-2">
+                  Service Category
                 </label>
                 <select
-                  id="projectType"
-                  name="projectType"
-                  value={formData.projectType}
+                  id="serviceCategory"
+                  name="serviceCategory"
+                  value={formData.serviceCategory}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
                 >
-                  <option value="">Select a service</option>
-                  {projectTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
+                  <option value="">Select a category</option>
+                  {Object.keys(serviceOptions).map((category) => (
+                    <option key={category} value={category}>
+                      {category}
                     </option>
                   ))}
                 </select>
               </div>
+
+              {/* Service Type - Only show if category is selected */}
+              {formData.serviceCategory && (
+                <div>
+                  <label htmlFor="serviceType" className="block text-gray-900 font-semibold mb-2">
+                    Service Type
+                  </label>
+                  <select
+                    id="serviceType"
+                    name="serviceType"
+                    value={formData.serviceType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
+                  >
+                    <option value="">Select service type</option>
+                    {getServiceTypes().map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Package - Only show if service type is selected */}
+              {formData.serviceType && (
+                <div>
+                  <label htmlFor="package" className="block text-gray-900 font-semibold mb-2">
+                    Package
+                  </label>
+                  <select
+                    id="package"
+                    name="package"
+                    value={formData.package}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-ider-yellow focus:ring-2 focus:ring-ider-yellow/20 transition-all duration-300"
+                  >
+                    <option value="">Select a package</option>
+                    {getPackages().map((pkg) => (
+                      <option key={pkg} value={pkg}>
+                        {pkg}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               {/* Message Field */}
               <div>
@@ -293,9 +420,9 @@ const Contact = () => {
 
               {/* hCaptcha */}
               <div className="my-6">
-                <div 
+                <div
                   ref={captchaRef}
-                  className="h-captcha" 
+                  className="h-captcha"
                   data-captcha="true"
                   style={{
                     minHeight: '78px',
@@ -322,13 +449,12 @@ const Contact = () => {
 
               {/* Result Message */}
               {submitResult && (
-                <div className={`mt-4 p-4 rounded-lg text-center font-semibold ${
-                  submitResult === 'success' 
-                    ? 'bg-green-100 text-green-800' 
-                    : 'bg-red-100 text-red-800'
-                }`}>
-                  {submitResult === 'success' 
-                    ? '✓ Message sent successfully!' 
+                <div className={`mt-4 p-4 rounded-lg text-center font-semibold ${submitResult === 'success'
+                  ? 'bg-green-100 text-green-800'
+                  : 'bg-red-100 text-red-800'
+                  }`}>
+                  {submitResult === 'success'
+                    ? '✓ Message sent successfully!'
                     : '✗ Failed to send message. Please try again.'}
                 </div>
               )}
