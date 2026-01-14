@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Globe, Code, Zap, Shield, FileText } from 'lucide-react';
+import { Mail, Globe, Code, Zap, Shield, FileText, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -22,7 +22,8 @@ const Footer = () => {
 
   const legalLinks = [
     { label: 'Privacy Policy', href: '/privacy-policy', icon: Shield },
-    { label: 'Terms of Service', href: '/terms-of-service', icon: FileText },
+    { label: 'Terms & Conditions', href: '/terms-of-service', icon: FileText },
+    { label: 'Refund Policy', href: '/refund-policy', icon: RotateCcw },
   ];
 
   const socialLinks = [
@@ -133,7 +134,7 @@ const Footer = () => {
               <div className="mt-8 p-4 bg-gray-100 rounded-lg">
                 <h5 className="text-gray-900 font-semibold mb-2 text-sm">Security</h5>
                 <p className="text-gray-600 text-xs leading-relaxed">
-                  We prioritize the security and privacy of our clients. 
+                  We prioritize the security and privacy of our clients.
                   All data is protected with industry-standard encryption.
                 </p>
               </div>
@@ -146,7 +147,7 @@ const Footer = () => {
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-600 text-sm">
-                © 2025 IDER SOLUTIONS (PVT) LTD. All rights reserved.
+                © 2026 IDER SOLUTIONS (PVT) LTD. All rights reserved.
               </div>
               <div className="flex items-center space-x-1 text-gray-600 text-sm">
                 <span>Made with</span>

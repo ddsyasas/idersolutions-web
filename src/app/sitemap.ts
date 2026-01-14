@@ -55,13 +55,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date('2024-01-01'),
+      lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date('2024-01-01'),
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/refund-policy`,
+      lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
