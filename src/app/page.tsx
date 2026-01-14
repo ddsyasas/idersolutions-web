@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <>
-      <StructuredData 
+      <StructuredData
         type="organization"
         data={{
           name: "IDER Solutions",
@@ -47,8 +47,8 @@ const Home = () => {
           ]
         }}
       />
-      
-      <StructuredData 
+
+      <StructuredData
         type="website"
         data={{
           name: "IDER Solutions",
@@ -58,7 +58,7 @@ const Home = () => {
       />
 
       {/* Aggregate Rating for Testimonials */}
-      <StructuredData 
+      <StructuredData
         type="aggregateRating"
         data={{
           datePublished: "5",
@@ -67,7 +67,7 @@ const Home = () => {
       />
 
       {/* Service Structured Data */}
-      <StructuredData 
+      <StructuredData
         type="service"
         data={{
           name: "Web Development",
@@ -76,7 +76,7 @@ const Home = () => {
           serviceType: "Web Development"
         }}
       />
-      <StructuredData 
+      <StructuredData
         type="service"
         data={{
           name: "Digital Marketing",
@@ -85,7 +85,7 @@ const Home = () => {
           serviceType: "Digital Marketing"
         }}
       />
-      <StructuredData 
+      <StructuredData
         type="service"
         data={{
           name: "App Development",
@@ -94,7 +94,7 @@ const Home = () => {
           serviceType: "App Development"
         }}
       />
-      <StructuredData 
+      <StructuredData
         type="service"
         data={{
           name: "Design & Multimedia",
@@ -105,7 +105,7 @@ const Home = () => {
       />
 
       {/* Contact Page Structured Data */}
-      <StructuredData 
+      <StructuredData
         type="contactPage"
         data={{
           name: "Contact Us",
@@ -266,9 +266,9 @@ const Home = () => {
           })
         }}
       />
-      
+
       <DefaultPerformanceOptimizer />
-      
+
       <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
         <AnimatedBackground />
         <Navbar scrollY={scrollY} />
@@ -285,12 +285,14 @@ const Home = () => {
           <section id="why-us">
             <WhyChooseUs />
           </section>
+          {/* TEMPORARILY HIDDEN - Uncomment to restore 
           <section id="portfolio">
             <Portfolio />
           </section>
           <section id="blog">
             <Blog />
           </section>
+          */}
           <section id="testimonials">
             <Testimonials />
           </section>
