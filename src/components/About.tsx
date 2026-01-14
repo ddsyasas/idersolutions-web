@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import {
   Target,
@@ -12,39 +12,51 @@ import {
   BarChart3,
   Handshake,
   Award,
-  Linkedin
+  Linkedin,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 const About = () => {
+  const [expandedTeam, setExpandedTeam] = useState<number | null>(null);
+
   const team = [
     {
       name: 'Sajana Yasas',
       role: 'Founder, CEO & Head of Development',
+      bio: 'The visionary behind IDER Solutions, Sajana brings 7+ years of digital expertise and a science-driven approach to every project. He personally leads the development team, architecting websites, web applications, and mobile solutions.',
       highlight: true,
+      linkedin: 'https://linkedin.com/in/ddsyasas',
     },
     {
       name: 'Chanaka Sanjeewa',
       role: 'Co-Founder & Project Manager',
+      bio: 'The operational backbone of IDER Solutions, managing all projects and overseeing the Sri Lankan office. His meticulous attention to detail ensures every project is delivered on time and exceeds expectations.',
     },
     {
       name: 'Jeewantha',
       role: 'Head of SEO & Content Strategy',
+      bio: 'Leading search optimization and content efforts, Jeewantha develops strategies that help clients climb Google rankings and turn visibility into conversions.',
     },
     {
       name: 'Sarah Caldera',
       role: 'Senior Content Lead',
+      bio: 'Heads the content writing team with years of experience in web content and digital marketing, ensuring every piece is engaging, SEO-optimized, and aligned with client goals.',
     },
     {
       name: 'Mohamed Izad',
       role: 'HR Manager',
+      bio: 'Manages the growing team, handling recruitment and team development. The heart of IDER Solutions\' company culture.',
     },
     {
       name: 'Nigunthan Prignaselvam',
       role: 'Social Media Strategist',
+      bio: 'The creative force behind clients\' social media success, developing strategies that build engaged communities, increase brand visibility, and drive meaningful interactions.',
     },
     {
       name: 'Chamath Ilangkoon',
       role: 'Creative Director (Video & Multimedia)',
+      bio: 'Leads visual storytelling efforts, handling video editing, motion graphics, and multimedia content that captures attention and drives engagement.',
     },
   ];
 
@@ -230,26 +242,61 @@ const About = () => {
             </div>
           </div>
 
-          {/* Team Section - Clean Lines Design */}
+          {/* Team Section - Expandable Lines Design */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Meet Our Team</h2>
             <div className="border-t border-gray-200">
               {team.map((member, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between py-5 border-b border-gray-200 group hover:bg-gray-50 px-4 -mx-4 transition-colors ${member.highlight ? 'bg-gray-50' : ''
-                    }`}
+                  className="border-b border-gray-200"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-3 h-3 rounded-full ${member.highlight ? 'bg-ider-yellow' : 'bg-gray-300 group-hover:bg-ider-yellow'} transition-colors`} />
-                    <div>
-                      <h3 className={`font-semibold ${member.highlight ? 'text-ider-yellow' : 'text-gray-900'}`}>
-                        {member.name}
-                      </h3>
+                  <button
+                    onClick={() => setExpandedTeam(expandedTeam === index ? null : index)}
+                    className={`w-full flex items-center justify-between py-5 px-4 text-left group hover:bg-gray-50 transition-colors ${member.highlight ? 'bg-gray-50' : ''
+                      }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`w-3 h-3 rounded-full ${member.highlight ? 'bg-ider-yellow' : 'bg-gray-300 group-hover:bg-ider-yellow'} transition-colors`} />
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                        <h3 className={`font-semibold ${member.highlight ? 'text-ider-yellow' : 'text-gray-900'}`}>
+                          {member.name}
+                        </h3>
+                        <span className="text-gray-500 text-sm">
+                          {member.role}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-gray-500 text-sm text-right">
-                    {member.role}
+                    <div className="flex items-center gap-3">
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-gray-400 hover:text-ider-yellow transition-colors"
+                        >
+                          <Linkedin className="w-4 h-4" />
+                        </a>
+                      )}
+                      {expandedTeam === index ? (
+                        <ChevronUp className="w-5 h-5 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Expandable Bio */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${expandedTeam === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                  >
+                    <div className="px-12 pb-5">
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {member.bio}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
