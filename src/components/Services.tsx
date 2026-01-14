@@ -17,6 +17,7 @@ const Services = () => {
       ],
       color: 'from-blue-400 to-purple-500',
       glowColor: 'rgba(59, 130, 246, 0.6)',
+      pricingLink: '/pricing#digital-marketing',
     },
     {
       icon: Globe,
@@ -30,6 +31,7 @@ const Services = () => {
       ],
       color: 'from-green-400 to-teal-500',
       glowColor: 'rgba(34, 197, 94, 0.6)',
+      pricingLink: '/pricing#development',
     },
     {
       icon: Code,
@@ -43,6 +45,7 @@ const Services = () => {
       ],
       color: 'from-orange-400 to-red-500',
       glowColor: 'rgba(251, 146, 60, 0.6)',
+      pricingLink: '/pricing#development',
     },
     {
       icon: Image,
@@ -56,6 +59,7 @@ const Services = () => {
       ],
       color: 'from-pink-400 to-violet-500',
       glowColor: 'rgba(236, 72, 153, 0.6)',
+      pricingLink: '/pricing#design',
     },
   ];
 
@@ -94,7 +98,7 @@ const Services = () => {
               }}
             >
               {/* Icon with colorful background and glow effect */}
-              <div 
+              <div
                 className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 icon-container`}
                 style={{
                   boxShadow: 'none',
@@ -126,7 +130,14 @@ const Services = () => {
               </ul>
 
               {/* Learn More Link */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between">
+                <a
+                  href={service.pricingLink}
+                  className="text-gray-600 hover:text-gray-900 font-medium inline-flex items-center space-x-1 transition-colors duration-300"
+                >
+                  <span>View Pricing</span>
+                  <span>→</span>
+                </a>
                 <a
                   href="#contact"
                   className="text-ider-yellow hover:opacity-80 font-semibold inline-flex items-center space-x-2 group-hover:translate-x-2 transition-transform duration-300"
@@ -144,13 +155,22 @@ const Services = () => {
           <p className="text-gray-600 mb-6">
             Need a custom solution? We&apos;d love to discuss your project.
           </p>
-          <a
-            href="#contact"
-            className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
-          >
-            <span>Start Your Project</span>
-            <span>🚀</span>
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/pricing"
+              className="bg-gray-200 text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-300 transition-all duration-300 inline-flex items-center space-x-2"
+            >
+              <span>View Our Pricing</span>
+              <span>💰</span>
+            </a>
+            <a
+              href="#contact"
+              className="bg-ider-yellow text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all duration-300 inline-flex items-center space-x-2 yellow-glow"
+            >
+              <span>Start Your Project</span>
+              <span>🚀</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

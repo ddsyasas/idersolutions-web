@@ -54,7 +54,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <StructuredData 
+      <StructuredData
         type="service"
         data={{
           name: "Digital Solutions Services",
@@ -80,28 +80,34 @@ export default function ServicesPage() {
               <li>Services</li>
             </ol>
           </nav>
-          
+
           <Services />
-          
+
           {/* Internal Linking Section */}
           <section className="mt-16 py-12 bg-gray-50 rounded-lg">
             <div className="container mx-auto px-6">
               <h2 className="text-2xl font-bold mb-6 text-center text-gray-900">Ready to Get Started?</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="bg-ider-yellow text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all duration-300"
                 >
                   Contact Us
                 </a>
-                <a 
-                  href="/portfolio" 
+                <a
+                  href="/pricing"
+                  className="bg-gray-200 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300"
+                >
+                  View Pricing
+                </a>
+                <a
+                  href="/portfolio"
                   className="bg-gray-200 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300"
                 >
                   View Our Portfolio
                 </a>
-                <a 
-                  href="/about" 
+                <a
+                  href="/about"
                   className="bg-gray-200 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300"
                 >
                   Learn About Us

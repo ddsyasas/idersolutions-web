@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://idersolutions.com'
   const currentDate = new Date()
-  
+
   return [
     {
       url: baseUrl,
@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {

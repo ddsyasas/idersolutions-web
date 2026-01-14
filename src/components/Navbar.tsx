@@ -17,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
     { href: '/', label: 'Home', useHash: true },
     { href: '/about', label: 'About', useHash: false },
     { href: '/services', label: 'Services', useHash: false },
+    { href: '/pricing', label: 'Pricing', useHash: false },
     { href: '/portfolio', label: 'Portfolio', useHash: false },
     { href: '/blog', label: 'Blog', useHash: false },
     { href: '/careers', label: 'Careers', useHash: false },
@@ -27,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
   // Helper to handle navigation
   const handleNavClick = (href: string, useHash: boolean) => {
     setIsMenuOpen(false);
-    
+
     if (useHash && pathname === '/') {
       // On home, use hash for smooth scrolling
       const el = document.querySelector(href);
@@ -45,11 +46,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrollY > 50 || isMenuOpen 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 || isMenuOpen
+          ? 'bg-white/95 backdrop-blur-lg shadow-lg'
           : 'bg-white/80 backdrop-blur-sm'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -76,15 +76,13 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href, item.useHash)}
-                className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 relative group ${
-                  pathname === item.href ? 'text-ider-yellow' : ''
-                }`}
+                className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 relative group ${pathname === item.href ? 'text-ider-yellow' : ''
+                  }`}
                 style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-ider-yellow transition-all duration-300 group-hover:w-full ${
-                  pathname === item.href ? 'w-full' : 'w-0'
-                }`}></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-ider-yellow transition-all duration-300 group-hover:w-full ${pathname === item.href ? 'w-full' : 'w-0'
+                  }`}></span>
               </button>
             ))}
             <button
@@ -112,9 +110,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href, item.useHash)}
-                  className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 py-2 ${
-                    pathname === item.href ? 'text-ider-yellow font-semibold' : ''
-                  }`}
+                  className={`text-gray-900 hover:text-ider-yellow transition-colors duration-300 py-2 ${pathname === item.href ? 'text-ider-yellow font-semibold' : ''
+                    }`}
                   style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}
                 >
                   {item.label}
