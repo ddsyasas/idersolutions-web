@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
+import AboutPreview from '@/components/AboutPreview';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Portfolio from '@/components/Portfolio';
@@ -277,7 +277,7 @@ const Home = () => {
             <Hero />
           </section>
           <section id="about">
-            <About />
+            <AboutPreview />
           </section>
           <section id="services">
             <Services />
