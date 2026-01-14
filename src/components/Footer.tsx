@@ -13,8 +13,9 @@ const Footer = () => {
   const quickLinks = [
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Portfolio', href: '/portfolio' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Pricing', href: '/pricing' },
+    // { label: 'Portfolio', href: '/portfolio' }, // TEMPORARILY HIDDEN
+    // { label: 'Blog', href: '/blog' }, // TEMPORARILY HIDDEN
     { label: 'Careers', href: '/careers' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '/contact' },

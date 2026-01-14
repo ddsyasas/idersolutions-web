@@ -18,8 +18,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
     { href: '/about', label: 'About', useHash: false },
     { href: '/services', label: 'Services', useHash: false },
     { href: '/pricing', label: 'Pricing', useHash: false },
-    { href: '/portfolio', label: 'Portfolio', useHash: false },
-    { href: '/blog', label: 'Blog', useHash: false },
+    // { href: '/portfolio', label: 'Portfolio', useHash: false }, // TEMPORARILY HIDDEN
+    // { href: '/blog', label: 'Blog', useHash: false }, // TEMPORARILY HIDDEN
     { href: '/careers', label: 'Careers', useHash: false },
     { href: '#faq', label: 'FAQ', useHash: true },
     { href: '/contact', label: 'Contact', useHash: false },
@@ -47,8 +47,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 || isMenuOpen
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg'
-          : 'bg-white/80 backdrop-blur-sm'
+        ? 'bg-white/95 backdrop-blur-lg shadow-lg'
+        : 'bg-white/80 backdrop-blur-sm'
         }`}
     >
       <div className="container mx-auto px-6 py-4">
