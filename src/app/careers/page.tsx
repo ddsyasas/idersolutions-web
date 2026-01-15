@@ -54,25 +54,36 @@ export default function CareersPage() {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Content Writer",
-    "description": "Are you a creative wordsmith who knows how to drive SEO results? We're seeking a Content Writer who can craft compelling content, optimise it for search, and use modern tools to deliver value.",
+    "description": "Are you a creative wordsmith who knows how to drive SEO results? We're seeking a Content Writer who can craft compelling content, optimise it for search, and use modern tools to deliver value. Responsibilities include writing SEO-optimized articles, managing WordPress content, applying interlinking strategies, using tools like Grammarly and AI assistants, and managing newsletter campaigns via Zoho CRM.",
     "identifier": {
       "@type": "PropertyValue",
       "name": "IDER Solutions",
       "value": "512840"
     },
-    "datePosted": new Date().toISOString(),
+    "datePosted": "2026-01-10",
+    "validThrough": "2026-03-31",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
       "name": "IDER Solutions (Pvt) Ltd",
-      "sameAs": "https://idersolutions.com"
+      "sameAs": "https://idersolutions.com",
+      "logo": "https://idersolutions.com/logo.svg"
     },
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "Worldwide"
+        "streetAddress": "Remote Position",
+        "addressLocality": "Colombo",
+        "addressRegion": "Western Province",
+        "postalCode": "00100",
+        "addressCountry": "LK"
       }
+    },
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Worldwide"
     },
     "baseSalary": {
       "@type": "MonetaryAmount",
