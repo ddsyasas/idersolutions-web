@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -301,6 +302,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <Sonner />
+          <SpeedInsights />
         </TooltipProvider>
         {/* Tawk.to Live Chat */}
         <Script
